@@ -1,4 +1,4 @@
-package com.openv.mybatis.redevelop.example.paged;
+package com.openv.mybatis.example.paged;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;

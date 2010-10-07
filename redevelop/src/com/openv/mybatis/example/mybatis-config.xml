@@ -6,7 +6,7 @@
 	
 	<!-- 配置分页查询拦截器 -->
 	<plugins>
-		<plugin interceptor="com.openv.mybatis.redevelop.example.paged.MyPagedInterceptor"></plugin>
+		<plugin interceptor="com.openv.mybatis.example.paged.MyPagedInterceptor"></plugin>
 	</plugins>
 	 
 	<environments default="mysql">

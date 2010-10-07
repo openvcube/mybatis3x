@@ -3,10 +3,10 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.openv.mybatis.redevelop.example">
+<mapper namespace="com.openv.mybatis.example">
 
-	<select id="selectCustomer" resultType="com.openv.mybatis.redevelop.example.Customer"
-		parameterType="com.openv.mybatis.redevelop.example.Customer"  >
+	<select id="selectCustomer" resultType="com.openv.mybatis.example.Customer"
+		parameterType="com.openv.mybatis.example.Customer"  >
 		SELECT
 			customer_id AS customerId ,
 			store_id AS storeId,
@@ -25,8 +25,8 @@
 		</where>
 	</select>
 	
-	<select id="selectEmp" resultType="com.openv.mybatis.redevelop.example.Emp"
-		parameterType="com.openv.mybatis.redevelop.example.Emp"  >
+	<select id="selectEmp" resultType="com.openv.mybatis.example.Emp"
+		parameterType="com.openv.mybatis.example.Emp"  >
 		SELECT
 			empno,
 			ename,

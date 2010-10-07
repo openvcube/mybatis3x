@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.openv.mybatis.example.insert"  >
+  
+  
+	<insert id="insertCustomer"  parameterType="com.openv.mybatis.example.Customer"   flushCache="true" >
+		<selectKey    keyProperty="customerId"  keyColumn="customer_Id" order="AFTER" resultType="int"  > 
+			select SUBSTR(NOW()+0,10,5) from dual
+		</selectKey>
+			INSERT INTO customer (
+				customer_id,
+				store_id,
+				first_name ,
+				last_name ,
+				email,
+				address_id,
+				active,
+				create_date,
+				last_update
+				)VALUES (
+				#{customerId},
+				#{storeId},
+				#{firstName},
+				#{lastName},
+				#{email},
+				#{addressId},
+				#{active},
+				#{createDate},
+				#{lastUpdate,jdbcType=TIMESTAMP}
+			)
+	</insert>
+
+</mapper>

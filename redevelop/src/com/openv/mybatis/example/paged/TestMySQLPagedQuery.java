@@ -1,7 +1,7 @@
 /**
  * Copyright(c) http://www.open-v.com
  */
-package com.openv.mybatis.redevelop.example.paged;
+package com.openv.mybatis.example.paged;
 
 import java.io.InputStream;
 import java.sql.Connection;
@@ -15,7 +15,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-import com.openv.mybatis.redevelop.example.Customer;
+import com.openv.mybatis.example.Customer;
 
 
 /**
@@ -47,7 +47,7 @@ public class TestMySQLPagedQuery {
 		//根据pageIndex及pageSize，计算出从数据库表取数的位置offset。
 		int offset = (pageIndex-1)*pageSize;
 		RowBounds rowBounds = new RowBounds(offset,pageSize);
-		String statementId ="com.openv.mybatis.redevelop.example.selectCustomer";
+		String statementId ="com.openv.mybatis.example.selectCustomer";
 		Customer param = new Customer();
 		param.setLastName("F");
 		List<Customer> customerList = sqlSession.selectList(statementId,param,rowBounds);

@@ -1,7 +1,7 @@
 /**
  * Copyright(c) http://www.open-v.com
  */
-package com.openv.mybatis.redevelop.example.paged;
+package com.openv.mybatis.example.paged;
 
 import java.io.InputStream;
 import java.util.List;
@@ -14,7 +14,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-import com.openv.mybatis.redevelop.example.Emp;
+import com.openv.mybatis.example.Emp;
 
 
 /**
@@ -47,7 +47,7 @@ public class TestOraclePagedQuery {
 		int offset = (pageIndex-1)*pageSize;
 		RowBounds rowBounds = new RowBounds(offset,pageSize);
 		
-		String statementId ="com.openv.mybatis.redevelop.example.selectEmp";
+		String statementId ="com.openv.mybatis.example.selectEmp";
 		Emp param = new Emp();
 		List<Emp> empList = sqlSession.selectList(statementId,param,rowBounds);
 		

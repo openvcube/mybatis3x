@@ -1,7 +1,7 @@
 /**
  * Copyright(c) http://www.open-v.com
  */
-package com.openv.mybatis.redevelop.example;
+package com.openv.mybatis.example;
 
 import java.io.Serializable;
 import java.util.Date;

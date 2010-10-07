@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.openv.mybatis.example.select"  >
+ 
+ 	<cache></cache>
+ 	
+ 	<!-- 配置sql的公共部分 -->
+ 	<sql id="commonSql">
+ 		SELECT
+		customer_id AS customerId ,
+		store_id AS storeId,
+		first_name AS firstName,
+		last_name AS lastName,
+		email,
+		address_id AS
+		addressId,
+		active,
+		create_date AS createDate,
+		last_update AS lastUpdate
+		FROM customer 
+ 	</sql>
+
+	<select id="selectById" resultType="com.openv.mybatis.example.Customer"   parameterType="com.openv.mybatis.example.Customer">
+		SELECT
+		customer_id AS customerId ,
+		store_id AS storeId,
+		first_name AS firstName,
+		last_name AS lastName,
+		email,
+		address_id AS
+		addressId,
+		active,
+		create_date AS createDate,
+		last_update AS lastUpdate
+		FROM customer 
+		WHERE customer_id = #{customerId}  
+	</select>
+	
+	<select id="selectAll"  parameterType="com.openv.mybatis.example.Customer"  resultType="com.openv.mybatis.example.Customer"  >
+		<!-- 引用<sql>中的配置 -->
+		<include refid="commonSql"/>
+	</select>
+
+</mapper>
