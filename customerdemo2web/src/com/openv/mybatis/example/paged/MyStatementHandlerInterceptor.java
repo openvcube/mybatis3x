@@ -1,4 +1,4 @@
-package com.openv.mybatis.customerdemo2web.paged;
+package com.openv.mybatis.example.paged;
 
 import java.sql.Connection;
 import java.util.Properties;

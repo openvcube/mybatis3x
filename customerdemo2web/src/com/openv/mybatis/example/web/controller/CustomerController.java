@@ -1,7 +1,7 @@
 /**
  * Copyright(c) http://www.open-v.com
  */
-package com.openv.mybatis.customerdemo2web.web.controller;
+package com.openv.mybatis.example.web.controller;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -12,9 +12,9 @@ import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.openv.mybatis.customerdemo2web.bean.Customer;
-import com.openv.mybatis.customerdemo2web.paged.PageResult;
-import com.openv.mybatis.customerdemo2web.service.ICustomerService;
+import com.openv.mybatis.example.bean.Customer;
+import com.openv.mybatis.example.paged.PageResult;
+import com.openv.mybatis.example.service.ICustomerService;
 
 /**
  * <pre>

@@ -1,7 +1,7 @@
 /**
  * Copyright(c) http://www.open-v.com
  */
-package com.openv.mybatis.customerdemo2web.service.impl;
+package com.openv.mybatis.example.service.impl;
 
 import java.util.List;
 
@@ -9,9 +9,9 @@ import org.apache.ibatis.session.RowBounds;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
-import com.openv.mybatis.customerdemo2web.bean.Customer;
-import com.openv.mybatis.customerdemo2web.paged.PageResult;
-import com.openv.mybatis.customerdemo2web.service.ICustomerService;
+import com.openv.mybatis.example.bean.Customer;
+import com.openv.mybatis.example.paged.PageResult;
+import com.openv.mybatis.example.service.ICustomerService;
 
 
 /**

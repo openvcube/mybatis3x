@@ -1,8 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@page import="com.openv.mybatis.customerdemo2web.paged.PageResult" %>
-<%@page import="com.openv.mybatis.customerdemo2web.bean.Customer" %>
-<%@page import="java.util.List" %>
+<%@page import="com.openv.mybatis.example.paged.PageResult" %>
+<%@page import="com.openvcom.openv.mybatis.example.bean.Customerpage import="java.util.List" %>
 <%
 PageResult<Customer> pr = (PageResult<Customer>)request.getAttribute("pr");
 Customer  customer = (Customer)request.getAttribute("customer");

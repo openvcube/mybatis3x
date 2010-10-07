@@ -1,7 +1,7 @@
 /**
  * Copyright(c) http://www.open-v.com
  */
-package com.openv.mybatis.customerdemo2web.paged;
+package com.openv.mybatis.example.paged;
 
 import java.util.List;
 

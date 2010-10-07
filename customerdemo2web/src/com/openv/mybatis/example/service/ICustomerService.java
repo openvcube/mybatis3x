@@ -1,10 +1,10 @@
 /**
  * Copyright(c) http://www.open-v.com
  */
-package com.openv.mybatis.customerdemo2web.service;
+package com.openv.mybatis.example.service;
 
-import com.openv.mybatis.customerdemo2web.bean.Customer;
-import com.openv.mybatis.customerdemo2web.paged.PageResult;
+import com.openv.mybatis.example.bean.Customer;
+import com.openv.mybatis.example.paged.PageResult;
 
 /**
  * <pre>
