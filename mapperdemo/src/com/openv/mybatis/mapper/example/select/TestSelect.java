@@ -1,7 +1,7 @@
 /**
  * Copyright(c) http://www.open-v.com
  */
-package com.openv.mybatis.mapper.example.select;
+package com.openv.mybatis.example.select;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -16,7 +16,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-import com.openv.mybatis.mapper.example.Customer;
+import com.openv.mybatis.example.Customer;
 
 /**
  * <pre>
@@ -37,7 +37,7 @@ public class TestSelect {
 		SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 		SqlSession sqlSession = sqlSessionFactory.openSession();
 		
-		String statement ="com.openv.mybatis.mapper.example.select.selectById";
+		String statement ="com.openv.mybatis.example.select.selectById";
 		
 		Customer query = new Customer();
 		query.setCustomerId(1);

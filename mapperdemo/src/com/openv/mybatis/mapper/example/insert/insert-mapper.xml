@@ -4,11 +4,11 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 
-<mapper namespace="com.openv.mybatis.mapper.example.insert"  >
+<mapper namespace="com.openv.mybatis.example.insert"  >
   
   
-	<insert id="insertCustomer"  parameterType="com.openv.mybatis.mapper.example.Customer"  >
-		<selectKey    keyProperty="customerId"  keyColumn="customer_Id" order="BEFORE" resultType="int"  > 
+	<insert id="insertCustomer"  parameterType="com.openv.mybatis.example.Customer"   flushCache="true" >
+		<selectKey    keyProperty="customerId"  keyColumn="customer_Id" order="AFTER" resultType="int"  > 
 			select SUBSTR(NOW()+0,10,5) from dual
 		</selectKey>
 			INSERT INTO customer (

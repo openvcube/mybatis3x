@@ -3,9 +3,9 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.openv.mybatis.mapper.example.set">
+<mapper namespace="com.openv.mybatis.example.set">
 
-	<update id="updateCustomer" parameterType="com.openv.mybatis.mapper.example.Customer">
+	<update id="updateCustomer" parameterType="com.openv.mybatis.example.Customer">
 		UPDATE customer 
 		<set>
 			<if test="firstName!=null and firstName!='' ">

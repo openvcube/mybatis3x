@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+	<settings>
+		<setting name="cacheEnabled" value="true"/> 
+	</settings>
+
+	<environments default="test">
+		<!-- 测试环境 -->
+		<environment id="test">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="com.mysql.jdbc.Driver" />
+				<property name="url" value="jdbc:mysql://localhost:3306/sakila" />
+				<!--jdbc://mysql://服务名 : 端口 : 数据库名称 -->
+				<property name="username" value="root" /><!-- 用户名 -->
+				<property name="password" value="" /><!-- 密码 -->
+			</dataSource>
+		</environment>
+	</environments>
+	<mappers>
+		<mapper resource="com/openv/mybatis/example/cache/testcache-ref-mapper.xml"  /> 
+		<mapper resource="com/openv/mybatis/example/cache/testcache-mapper.xml"  /> 
+		<mapper resource="com/openv/mybatis/example/parametermap/parameter-mapper.xml"  /> 
+		<mapper resource="com/openv/mybatis/example/select/select-mapper.xml"  /> 
+		<mapper resource="com/openv/mybatis/example/where/where-mapper.xml"  /> 
+		<mapper resource="com/openv/mybatis/example/set/set-mapper.xml"  /> 
+		<mapper resource="com/openv/mybatis/example/foreach/foreach-mapper.xml"  /> 
+		<mapper resource="com/openv/mybatis/example/trim/trim-mapper.xml"  /> 
+		<mapper resource="com/openv/mybatis/example/choose/choose-mapper.xml"  /> 
+		<mapper resource="com/openv/mybatis/example/bind/bind-mapper.xml"  /> 
+		<mapper resource="com/openv/mybatis/example/insert/insert-mapper.xml"  /> 
+	</mappers>
+
+</configuration>

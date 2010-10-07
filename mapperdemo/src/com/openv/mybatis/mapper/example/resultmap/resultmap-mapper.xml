@@ -3,7 +3,7 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.openv.mybatis.mapper.example.resultmap"  >
+<mapper namespace="com.openv.mybatis.example.resultmap"  >
  
  	<resultMap type="" id="">
  	<discriminator javaType="" 
@@ -12,8 +12,8 @@
  	</resultMap>
  
  
-	<select id="select"  parameterType="com.openv.mybatis.mapper.example.Customer" 
-	 resultType="com.openv.mybatis.mapper.example.Customer"  >
+	<select id="select"  parameterType="com.openv.mybatis.example.Customer" 
+	 resultType="com.openv.mybatis.example.Customer"  >
 		SELECT
 		customer_id AS customerId ,
 		store_id AS storeId,

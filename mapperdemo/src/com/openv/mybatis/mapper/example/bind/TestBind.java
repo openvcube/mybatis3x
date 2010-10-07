@@ -1,7 +1,7 @@
 /**
  * Copyright(c) http://www.open-v.com
  */
-package com.openv.mybatis.mapper.example.bind;
+package com.openv.mybatis.example.bind;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -13,7 +13,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-import com.openv.mybatis.mapper.example.Customer;
+import com.openv.mybatis.example.Customer;
 
 /**
  * <pre>
@@ -34,7 +34,7 @@ public class TestBind {
 		SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 		SqlSession sqlSession = sqlSessionFactory.openSession();
 		
-		String statement ="com.openv.mybatis.mapper.example.bind.select";
+		String statement ="com.openv.mybatis.example.bind.select";
 		
 		
 		Customer customer = new Customer();

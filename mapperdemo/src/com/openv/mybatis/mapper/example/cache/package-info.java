@@ -12,4 +12,4 @@
  *    修改后版本:     修改人：  修改日期:     修改内容: 
  * </pre>
  */
-package com.openv.mybatis.mapper.example.cache;
+package com.openv.mybatis.example.cache;

@@ -1,7 +1,7 @@
 /**
  * Copyright(c) http://www.open-v.com
  */
-package com.openv.mybatis.mapper.example.foreach;
+package com.openv.mybatis.example.foreach;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -15,7 +15,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-import com.openv.mybatis.mapper.example.Customer;
+import com.openv.mybatis.example.Customer;
 
 /**
  * <pre>
@@ -36,7 +36,7 @@ public class TestForeach {
 		SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 		SqlSession sqlSession = sqlSessionFactory.openSession();
 		
-		String statement ="com.openv.mybatis.mapper.example.foreach.selectAll";
+		String statement ="com.openv.mybatis.example.foreach.selectAll";
 		 
 		//统计first name为 PATRICIA 与 JOHNSON 的人数。
 		List<String> firstNames = new ArrayList<String>();
