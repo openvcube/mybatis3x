@@ -13,7 +13,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-import com.openv.mybatis.configuration.example.Customer;
+import com.openv.mybatis.example.Customer;
 
 /**
  * <pre>

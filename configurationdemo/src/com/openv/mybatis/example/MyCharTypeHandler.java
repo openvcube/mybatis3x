@@ -1,7 +1,7 @@
 /**
  * Copyright(c) http://www.open-v.com
  */
-package com.openv.mybatis.configuration.example;
+package com.openv.mybatis.example;
 
 import java.sql.CallableStatement;
 import java.sql.PreparedStatement;
