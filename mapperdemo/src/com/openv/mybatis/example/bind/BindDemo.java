@@ -1,13 +1,10 @@
 /**
  * Copyright(c) http://www.open-v.com
  */
-package com.openv.mybatis.example.trim;
+package com.openv.mybatis.example.bind;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -29,15 +26,15 @@ import com.openv.mybatis.example.Customer;
  *    修改后版本:     修改人：  修改日期:     修改内容: 
  * </pre>
  */
-public class TestTrim {
-	private static final Log log = LogFactory.getLog(TestTrim.class);
+public class BindDemo {
+	private static final Log log = LogFactory.getLog(BindDemo.class);
 	public static void main(String[] args) throws IOException {
 		String resource = "com/openv/mybatis/mapper/example/mybatis-config.xml";
 		InputStream inputStream = Resources.getResourceAsStream(resource);
 		SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 		SqlSession sqlSession = sqlSessionFactory.openSession();
 		
-		String statement ="com.openv.mybatis.example.trim.select";
+		String statement ="com.openv.mybatis.example.bind.select";
 		
 		
 		Customer customer = new Customer();
