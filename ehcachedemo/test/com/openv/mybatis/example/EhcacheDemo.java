@@ -38,11 +38,13 @@ public class EhcacheDemo {
 		String customerId = "2";//客户ID
 		log.info("第一次查询");
 		Customer customer = sqlSession.selectOne(statementId, customerId);
+		sqlSession.close();
+		
+		sqlSession = sqlSessionFactory.openSession();
 		log.info("第二次查询");
 		Customer customer2 = sqlSession.selectOne(statementId, customerId);
 		
 		sqlSession.close();
-		log.info(customer2);
 	}
 
 }

@@ -117,25 +117,6 @@ public class Customer implements Serializable{
 	}
 	
 	/**
-	 * 重写toString()方法，用于返回对象的所有信息。
-	 */
-	@Override
-	public String toString(){
-		StringBuffer str = new StringBuffer();
-		str.append("customerId：").append(this.customerId).append(",\n");
-		str.append("storeId：").append(this.storeId).append(",\n");
-		str.append("firstName：").append(this.firstName).append(",\n");
-		str.append("lastName：").append(this.lastName).append(",\n");
-		str.append("email：").append(this.email).append(",\n");
-		str.append("addressId：").append(this.addressId).append(",\n");
-		str.append("active：").append(this.active).append(",\n");
-		str.append("createDate：").append(this.createDate).append(",\n");
-		str.append("lastUpdate：").append(this.lastUpdate).append(",\n");
-		str.append("remark：").append(this.remark).append(",\n");
-		return str.toString();
-	}
-	
-	/**
 	 * @return 返回 remark。
 	 */
 	public String getRemark() {
