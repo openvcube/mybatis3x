@@ -63,25 +63,25 @@
 	<bean id="customerService" class="com.openv.mybatis.example.service.impl.CustomerServiceImpl"> 
 		<property name="sqlSessionFactory" ref="sqlSessionFactory"/>
 	</bean>
-	
-	<!-- 声明事务 -->
+<!-- 	
+	声明事务
 	<bean id="dataSourceTransactionManager" 
 		 class="org.springframework.jdbc.datasource.DataSourceTransactionManager" lazy-init="true">
 		<property name="dataSource" ref="dataSource"/>
 	</bean>
 	
-	<!-- 配置拦截的方法 -->
+	配置拦截的方法
 	<tx:advice id="txadvice" transaction-manager="dataSourceTransactionManager">
 		<tx:attributes>
 			<tx:method name="select*" propagation="REQUIRED" read-only="true"/>
 		</tx:attributes>
 	</tx:advice>
 	
-	<!-- 配置切面 -->
+	配置切面
 	<aop:config>
 		<aop:pointcut id="serviceOperation"
 			expression="execution(* com.openv..*Service.*(..))" />
 		<aop:advisor pointcut-ref="serviceOperation" advice-ref="txadvice" />
 	</aop:config>
-	
+	 -->
 </beans>

@@ -5,7 +5,6 @@ package com.openv.mybatis.example;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.apache.ibatis.session.SqlSession;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -22,9 +21,9 @@ import com.openv.mybatis.example.service.ICustomerService;
  *    修改后版本:     修改人：  修改日期:     修改内容: 
  * </pre>
  */
-public class CustomerDemo2Spring {
+public class CustomerDemoForSpring {
  
-	private static final Log log = LogFactory.getLog(CustomerDemo2Spring.class);
+	private static final Log log = LogFactory.getLog(CustomerDemoForSpring.class);
 	
 	public static void main(String[] args){
 		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
