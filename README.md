@@ -1,4 +1,4 @@
-mybatis
+mybatis3.2
 =======
 
-MyBatis系列作品
+MyBatis 3.2内部资料
