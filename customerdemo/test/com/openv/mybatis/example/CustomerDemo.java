@@ -33,7 +33,7 @@ public class CustomerDemo {
 		String customerId = "1";//客户ID
 		Customer customer = sqlSession.selectOne(statement, customerId);
 		sqlSession.close();
-		//输出customer的数据内容。
+		//输出customer对象的内容。
 		System.out.println(customer.toString());
 	}
 
