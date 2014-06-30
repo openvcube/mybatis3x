@@ -3,6 +3,7 @@
  */
 package com.openv.mybatis.example;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -16,8 +17,10 @@ import java.util.Date;
  *    修改后版本:     修改人：  修改日期:     修改内容: 
  * </pre>
  */
-public class Customer {
+public class Customer implements Serializable{
 
+	private static final long serialVersionUID = -2360245276026290635L;
+	
 	private int customerId;
 	private short storeId;
 	private String firstName;

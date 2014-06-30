@@ -15,6 +15,6 @@
     </environment>
   </environments>
   <mappers>
-    <mapper resource="com/openv/mybatis/example/Customer-mapper.xml"/>
+    <mapper resource="com/openv/mybatis/example/customer-mapper.xml"/>
   </mappers>
 </configuration>
