@@ -6,6 +6,8 @@ package com.openv.mybatis.example;
 import java.io.IOException;
 import java.io.InputStream;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -24,6 +26,7 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
  */
 public class CustomerDemoAnnotationMapper {
 
+	private static final Log log = LogFactory.getLog(CustomerDemoAnnotationMapper.class);
 	
 	public static void main(String[] args) throws IOException {
 		String resource = "com/openv/mybatis/example/mybatis-config.xml";
@@ -37,7 +40,7 @@ public class CustomerDemoAnnotationMapper {
 		String customerId = "1";//客户ID
 		Customer customer = customerMapper.selectById(customerId);
 		sqlSession.close();
-		System.out.println(customer.toString());
+		log.info(customer.toString());
 	}
 
 }

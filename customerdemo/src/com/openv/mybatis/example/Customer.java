@@ -6,6 +6,8 @@ package com.openv.mybatis.example;
 import java.io.Serializable;
 import java.util.Date;
 
+import org.apache.ibatis.type.Alias;
+
 /**
  * <pre>
  * customer表对应的POJO。
@@ -17,6 +19,7 @@ import java.util.Date;
  *    修改后版本:     修改人：  修改日期:     修改内容: 
  * </pre>
  */
+@Alias("customer")
 public class Customer implements Serializable{
 
 	private static final long serialVersionUID = -2360245276026290635L;
@@ -30,7 +33,19 @@ public class Customer implements Serializable{
 	private short active;
 	private Date createDate;
 	private Date lastUpdate;
+	private String remark;
 
+	public Customer() {
+	}
+	
+	/**
+	 * 
+	 */
+	public Customer(String remark) {
+		this.remark  = remark;
+	}
+	
+	
 	public int getCustomerId() {
 		return customerId;
 	}
@@ -118,7 +133,22 @@ public class Customer implements Serializable{
 		str.append("active：").append(this.active).append(",\n");
 		str.append("createDate：").append(this.createDate).append(",\n");
 		str.append("lastUpdate：").append(this.lastUpdate).append(",\n");
+		str.append("remark：").append(this.remark).append(",\n");
 		return str.toString();
+	}
+	
+	/**
+	 * @return 返回 remark。
+	 */
+	public String getRemark() {
+		return remark;
+	}
+
+	/**
+	 * @param remark 设置 remark。
+	 */
+	public void setRemark(String remark) {
+		this.remark = remark;
 	}
  
 }

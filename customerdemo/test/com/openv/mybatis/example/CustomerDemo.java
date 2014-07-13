@@ -6,6 +6,8 @@ package com.openv.mybatis.example;
 import java.io.IOException;
 import java.io.InputStream;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -24,17 +26,21 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
  */
 public class CustomerDemo {
  
+	private static final Log log = LogFactory.getLog(CustomerDemo.class);
+	
 	public static void main(String[] args) throws IOException {
 		String resource = "com/openv/mybatis/example/mybatis-config.xml";
 		InputStream inputStream = Resources.getResourceAsStream(resource);
 		SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 		SqlSession sqlSession = sqlSessionFactory.openSession();
+		
 		String statement ="com.openv.mybatis.example.Customer.selectById";
 		String customerId = "1";//客户ID
 		Customer customer = sqlSession.selectOne(statement, customerId);
+		
 		sqlSession.close();
 		//输出customer对象的内容。
-		System.out.println(customer.toString());
+		log.info(customer.toString());
 	}
 
 }
