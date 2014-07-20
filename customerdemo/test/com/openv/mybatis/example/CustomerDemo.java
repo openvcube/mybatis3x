@@ -37,12 +37,10 @@ public class CustomerDemo {
 		String statement ="com.openv.mybatis.example.Customer.selectById";
 		String customerId = "1";//客户ID
 		Customer customer = sqlSession.selectOne(statement, customerId);
-		Customer customer1 = sqlSession.selectOne(statement, customerId);
 		
 		sqlSession.close();
 		//输出customer对象的内容。
 		log.info(customer.toString());
-		log.info(customer1.toString());
 	}
 
 }
