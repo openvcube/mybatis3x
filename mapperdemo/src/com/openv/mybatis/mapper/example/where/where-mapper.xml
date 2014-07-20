@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.openv.mybatis.mapper.example.where"  >
+ 
+	<select id="selectAll"  parameterType="com.openv.mybatis.mapper.example.Customer"  resultType="com.openv.mybatis.mapper.example.Customer"  >
+		SELECT
+		customer_id AS customerId ,
+		store_id AS storeId,
+		first_name AS firstName,
+		last_name AS lastName,
+		email,
+		address_id AS
+		addressId,
+		active,
+		create_date AS createDate,
+		last_update AS lastUpdate
+		FROM customer 
+		<where>
+			<if test="customerId!=null and customerId !='' ">
+				AND  customer_id =#{customerId}
+			</if>
+			<if test="firstName!=null and  firstName!='' ">
+				AND  first_name =#{firstName}
+			</if>
+		</where>
+	</select>
+
+</mapper>

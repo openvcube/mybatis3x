@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.openv.mybatis.mapper.example.cache"  >
+    
+    <cache  eviction="LRU" size="1" flushInterval="50000" readOnly="false" >
+ 	</cache>
+ 	
+ 	<cache-ref namespace="com.openv.mybatis.mapper.example.cache-ref"/>
+ 
+	<select id="selectById" resultType="com.openv.mybatis.mapper.example.Customer" useCache="true" 
+			parameterType="string">
+		SELECT
+		customer_id AS customerId ,
+		store_id AS storeId,
+		first_name AS firstName,
+		last_name AS lastName,
+		email,
+		address_id AS
+		addressId,
+		active,
+		create_date AS createDate,
+		last_update AS lastUpdate
+		FROM customer WHERE customer_id = #{customerId}
+	</select>
+
+	<update id="updateCustomer" parameterType="com.openv.mybatis.mapper.example.Customer" flushCache="true">
+		UPDATE customer SET
+		first_name= #{firstName},
+		last_name=#{lastName},
+		email= #{email},
+		active= #{active}
+		WHERE customer_id = #{customerId}
+	</update>
+
+</mapper>

@@ -1,10 +1,13 @@
 /**
  * Copyright(c) http://www.open-v.com
  */
-package com.openv.mybatis.example;
+package com.openv.mybatis.mapper.example.set;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -13,9 +16,11 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
+import com.openv.mybatis.mapper.example.Customer;
+
 /**
  * <pre>
- * CustomerDemo测试类。
+ * 程序的中文名称。
  * </pre>
  * @author http://www.open-v.com
  * @version 1.00.00
@@ -24,25 +29,27 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
  *    修改后版本:     修改人：  修改日期:     修改内容: 
  * </pre>
  */
-public class CustomerDemo {
- 
-	private static final Log log = LogFactory.getLog(CustomerDemo.class);
-	
+public class TestSet {
+	private static final Log log = LogFactory.getLog(TestSet.class);
 	public static void main(String[] args) throws IOException {
-		String resource = "com/openv/mybatis/example/mybatis-config.xml";
+		String resource = "com/openv/mybatis/mapper/example/mybatis-config.xml";
 		InputStream inputStream = Resources.getResourceAsStream(resource);
 		SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 		SqlSession sqlSession = sqlSessionFactory.openSession();
 		
-		String statement ="com.openv.mybatis.example.Customer.selectById";
-		String customerId = "1";//客户ID
-		Customer customer = sqlSession.selectOne(statement, customerId);
-		Customer customer1 = sqlSession.selectOne(statement, customerId);
+		String statement ="com.openv.mybatis.mapper.example.set.updateCustomer";
 		
-		sqlSession.close();
+		Customer customer = new Customer();
+		customer.setCustomerId(1);
+		customer.setFirstName("TOM");
+		customer.setLastName("Brook");
+		
+		sqlSession.update(statement,customer);
+		sqlSession.commit();
+		
 		//输出customer对象的内容。
 		log.info(customer.toString());
-		log.info(customer1.toString());
+		
+		sqlSession.close();
 	}
-
 }

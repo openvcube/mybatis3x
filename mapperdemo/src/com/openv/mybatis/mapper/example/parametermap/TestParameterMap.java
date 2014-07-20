@@ -1,7 +1,7 @@
 /**
  * Copyright(c) http://www.open-v.com
  */
-package com.openv.mybatis.example;
+package com.openv.mybatis.mapper.example.parametermap;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -13,9 +13,11 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
+import com.openv.mybatis.mapper.example.Customer;
+
 /**
  * <pre>
- * CustomerDemo测试类。
+ * 程序的中文名称。
  * </pre>
  * @author http://www.open-v.com
  * @version 1.00.00
@@ -24,25 +26,24 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
  *    修改后版本:     修改人：  修改日期:     修改内容: 
  * </pre>
  */
-public class CustomerDemo {
- 
-	private static final Log log = LogFactory.getLog(CustomerDemo.class);
-	
+public class TestParameterMap {
+	private static final Log log = LogFactory.getLog(TestParameterMap.class);
 	public static void main(String[] args) throws IOException {
-		String resource = "com/openv/mybatis/example/mybatis-config.xml";
+		String resource = "com/openv/mybatis/mapper/example/mybatis-config.xml";
 		InputStream inputStream = Resources.getResourceAsStream(resource);
 		SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 		SqlSession sqlSession = sqlSessionFactory.openSession();
 		
-		String statement ="com.openv.mybatis.example.Customer.selectById";
-		String customerId = "1";//客户ID
-		Customer customer = sqlSession.selectOne(statement, customerId);
-		Customer customer1 = sqlSession.selectOne(statement, customerId);
+		String statement ="com.openv.mybatis.mapper.example.parametermap.selectById";
 		
-		sqlSession.close();
+		Customer query = new Customer();
+		query.setCustomerId(1);
+		
+		Customer customer = sqlSession.selectOne(statement, "1");
+		
 		//输出customer对象的内容。
 		log.info(customer.toString());
-		log.info(customer1.toString());
+		
+		sqlSession.close();
 	}
-
 }

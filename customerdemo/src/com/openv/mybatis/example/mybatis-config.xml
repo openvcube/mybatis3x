@@ -64,7 +64,8 @@
 	</databaseIdProvider>
 
 	<mappers>
-		<mapper resource="com/openv/mybatis/example/customer-mapper.xml" /> 
+		<mapper resource="com/openv/mybatis/example/customer-mapper.xml"  /> 
+		<mapper resource="com/openv/mybatis/example/customer-2-mapper.xml"  /> 
 	<!--<mapper url="file:///D:/mybatis32/customerdemo/src/com/openv/mybatis/example/customer-mapper.xml" /> -->
 	<!--<mapper class="com.openv.mybatis.example.ICustomerMapper"/> -->
 	<!-- <package name="com.openv.mybatis.example"/> -->
