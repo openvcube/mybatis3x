@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	
+	<properties resource="db.properties">
+	</properties>
+	
+	<settings>
+		<setting name="cacheEnabled" value="true"/>
+	</settings>
+	
+	<typeAliases >
+		<typeAlias type="com.openv.mybatis.configuration.Customer"  alias="Customer" />
+		<package name="com.openv.mybatis.configuration"/> 
+	</typeAliases>
+	
+	<typeHandlers>
+		<typeHandler handler="com.openv.mybatis.configuration.MyCharTypeHandler" jdbcType="VARCHAR" /> 
+	<!-- <package name="com.openv.mybatis.configuration"/> -->
+	</typeHandlers>
+	
+	<objectFactory type="com.openv.mybatis.configuration.MyObjectFactory">
+	</objectFactory>
+	
+	<objectWrapperFactory type="com.openv.mybatis.configuration.MyCustomerObjectWrapperFactory"/>
+	
+	<plugins>
+		<plugin interceptor="com.openv.mybatis.configuration.MyUpdateInterceptor"></plugin>
+	</plugins>
+	
+	
+	<environments default="product">
+		<!-- 生产环境 -->
+		<environment id="oracle">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="oracle.jdbc.driver.OracleDriver" />
+				<!-- jdbc://mysql://服务名 : 端口 : 数据库名称 -->
+				<property name="url" value="jdbc:oracle:thin:@10.10.0.52:1521:orcl" />
+				<!-- 用户名 -->
+				<property name="username" value="ftcsp_demon" />
+				<!-- 密码 -->
+				<property name="password" value="ftcsp_demon" />
+			</dataSource>
+		</environment>
+		<environment id="product">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="com.mysql.jdbc.Driver" />
+				<!-- jdbc://mysql://服务名 : 端口 : 数据库名称 -->
+				<property name="url" value="jdbc:mysql://localhost:3306/sakila" />
+				<!-- 用户名 -->
+				<property name="username" value="${myusername}" />
+				<!-- 密码 -->
+				<property name="password" value="${mypassword}" />
+			</dataSource>
+		</environment>
+		<!-- 测试环境 -->
+		<environment id="test">
+			<transactionManager type="MANAGED" >
+				<property name="closeConnection" value="true"/>
+			</transactionManager>
+			<dataSource type="POOLED">
+				<property name="driver" value="com.mysql.jdbc.Driver" />
+				<property name="url" value="jdbc:mysql://localhost:3306/sakila" /><!-- 
+					jdbc://mysql://服务名 : 端口 : 数据库名称 -->
+				<property name="username" value="root" /><!-- 用户名 -->
+				<property name="password" value="" /><!-- 密码 -->
+			</dataSource>
+		</environment>
+	</environments>
+
+	<databaseIdProvider type="DB_VENDOR">
+		<property name="MySQL" value="mysql"/>
+		<property name="Oracle" value="oracle"/>
+	</databaseIdProvider>
+
+	<mappers>
+		<mapper resource="com/openv/mybatis/configuration/customer-mapper.xml"  /> 
+	<!--<mapper url="file:///D:/mybatis32/customerdemo/src/com/openv/mybatis/configuration/customer-mapper.xml" /> -->
+	<!-- <package name="com.openv.mybatis.configuration"/> -->
+	</mappers>
+
+</configuration>
