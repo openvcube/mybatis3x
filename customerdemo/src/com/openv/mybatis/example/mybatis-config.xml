@@ -4,43 +4,18 @@
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	
-	<properties resource="db.properties">
-	</properties>
-	
-	<settings>
-		<setting name="cacheEnabled" value="true"/>
-	</settings>
-	
-	<typeAliases >
-		<typeAlias type="com.openv.mybatis.example.Customer"  alias="Customer" />
-		<package name="com.openv.mybatis.example"/> 
-	</typeAliases>
-	
-	<typeHandlers>
-		<typeHandler handler="com.openv.mybatis.example.MyCharTypeHandler" jdbcType="VARCHAR" /> 
-	<!-- <package name="com.openv.mybatis.example"/> -->
-	</typeHandlers>
-	
-	<objectFactory type="com.openv.mybatis.example.MyObjectFactory">
-	</objectFactory>
-	
-	<objectWrapperFactory type="com.openv.mybatis.example.MyCustomerObjectWrapperFactory"/>
-	
-	<plugins>
-		<plugin interceptor="com.openv.mybatis.example.MyUpdateInterceptor"></plugin>
-	</plugins>
-	
-	
 	<environments default="product">
 		<!-- 生产环境 -->
 		<environment id="product">
 			<transactionManager type="JDBC" />
 			<dataSource type="POOLED">
 				<property name="driver" value="com.mysql.jdbc.Driver" />
-				<property name="url" value="jdbc:mysql://localhost:3306/sakila" /><!-- 
-					jdbc://mysql://服务名 : 端口 : 数据库名称 -->
-				<property name="username" value="${myusername}" /><!-- 用户名 -->
-				<property name="password" value="${mypassword}" /><!-- 密码 -->
+				<!-- jdbc://mysql://服务名 : 端口 : 数据库名称 -->
+				<property name="url" value="jdbc:mysql://localhost:3306/sakila" />
+				<!-- 用户名 -->
+				<property name="username" value="root" />
+				<!-- 密码 -->
+				<property name="password" value="" />
 			</dataSource>
 		</environment>
 		<!-- 测试环境 -->
@@ -58,6 +33,7 @@
 		</environment>
 	</environments>
 
+	<!-- 数据库提供商 -->
 	<databaseIdProvider type="DB_VENDOR">
 		<property name="MySQL" value="mysql"/>
 		<property name="Oracle" value="oracle"/>
@@ -65,7 +41,6 @@
 
 	<mappers>
 		<mapper resource="com/openv/mybatis/example/customer-mapper.xml"  /> 
-		<mapper resource="com/openv/mybatis/example/customer-2-mapper.xml"  /> 
 	<!--<mapper url="file:///D:/mybatis32/customerdemo/src/com/openv/mybatis/example/customer-mapper.xml" /> -->
 	<!--<mapper class="com.openv.mybatis.example.ICustomerMapper"/> -->
 	<!-- <package name="com.openv.mybatis.example"/> -->

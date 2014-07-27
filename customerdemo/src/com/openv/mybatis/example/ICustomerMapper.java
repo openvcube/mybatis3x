@@ -3,6 +3,7 @@
  */
 package com.openv.mybatis.example;
 
+import org.apache.ibatis.annotations.Lang;
 import org.apache.ibatis.annotations.Result;
 import org.apache.ibatis.annotations.Results;
 import org.apache.ibatis.annotations.Select;
@@ -20,7 +21,7 @@ import org.apache.ibatis.annotations.Select;
  */
 public interface ICustomerMapper {
 
-	final String selectById = "SELECT * FROM customer WHERE customer_id =#{customerId}";
+	final String selectById = "<script>SELECT * FROM customer WHERE customer_id =#{customerId}</script>";
 
 	@Select(selectById)
 	@Results(value = {

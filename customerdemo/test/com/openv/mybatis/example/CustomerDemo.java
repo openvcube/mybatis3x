@@ -34,9 +34,9 @@ public class CustomerDemo {
 		SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 		SqlSession sqlSession = sqlSessionFactory.openSession();
 		
-		String statement ="com.openv.mybatis.example.Customer.selectById";
+		String statementId ="com.openv.mybatis.example.Customer.selectById";
 		String customerId = "1";//客户ID
-		Customer customer = sqlSession.selectOne(statement, customerId);
+		Customer customer = sqlSession.selectOne(statementId, customerId);
 		
 		sqlSession.close();
 		//输出customer对象的内容。

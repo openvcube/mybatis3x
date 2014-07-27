@@ -12,7 +12,7 @@
  
 
 	<select id="selectById" resultType="com.openv.mybatis.example.Customer"   databaseId="oracle"
-		parameterType="string">
+		parameterType="string" lang="org.apache.ibatis.submitted.language.VelocityLanguageDriver1111" >
 		SELECT
 		customer_id AS customerId ,
 		store_id AS storeId,

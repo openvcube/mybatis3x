@@ -21,9 +21,7 @@ import org.apache.ibatis.type.Alias;
  */
 @Alias("customer")
 public class Customer implements Serializable{
-
-	private static final long serialVersionUID = 1L;
-
+	private static final long serialVersionUID = 4686780148191860583L;
 	private int customerId;
 	private short storeId;
 	private String firstName;
