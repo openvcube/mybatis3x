@@ -5,7 +5,7 @@
 
 <mapper namespace="com.openv.mybatis.mapper.example.foreach"  >
  
-	<select id="selectAll"  parameterType="com.openv.mybatis.mapper.example.Customer"  resultType="com.openv.mybatis.mapper.example.Customer"  >
+	<select id="selectAll"  parameterType="list"  resultType="com.openv.mybatis.mapper.example.Customer"  >
 		SELECT
 		customer_id AS customerId ,
 		store_id AS storeId,
@@ -17,15 +17,11 @@
 		active,
 		create_date AS createDate,
 		last_update AS lastUpdate
-		FROM customer 
-		<where>
-			<if test="customerId!=null and customerId !='' ">
-				AND  customer_id =#{customerId}
-			</if>
-			<if test="firstName!=null and  firstName!='' ">
-				AND  first_name =#{firstName}
-			</if>
-		</where>
+		FROM customer WHERE
+		first_name IN  
+		<foreach collection="list" item="name" open="("  separator="," close=")">
+			#{name}
+		</foreach>
 	</select>
 
 </mapper>

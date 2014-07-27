@@ -1,12 +1,10 @@
 /**
  * Copyright(c) http://www.open-v.com
  */
-package com.openv.mybatis.mapper.example.foreach;
+package com.openv.mybatis.mapper.example.bind;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.List;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -28,24 +26,24 @@ import com.openv.mybatis.mapper.example.Customer;
  *    修改后版本:     修改人：  修改日期:     修改内容: 
  * </pre>
  */
-public class TestForeach {
-	private static final Log log = LogFactory.getLog(TestForeach.class);
+public class TestBind {
+	private static final Log log = LogFactory.getLog(TestBind.class);
 	public static void main(String[] args) throws IOException {
 		String resource = "com/openv/mybatis/mapper/example/mybatis-config.xml";
 		InputStream inputStream = Resources.getResourceAsStream(resource);
 		SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 		SqlSession sqlSession = sqlSessionFactory.openSession();
 		
-		String statement ="com.openv.mybatis.mapper.example.foreach.selectAll";
-		 
-		//统计first name为 PATRICIA 与 JOHNSON 的人数。
-		List<String> firstNames = new ArrayList<String>();
-		firstNames.add("PATRICIA");
-		firstNames.add("LINDA");
-		List<Customer> list = sqlSession.selectList(statement,firstNames);
+		String statement ="com.openv.mybatis.mapper.example.bind.select";
 		
-		//共查询到。
-		log.info("叫PATRICIA或LINDA的人有："+list.size() +" 个");
+		
+		Customer customer = new Customer();
+		customer.setCustomerId(1);
+		
+		Customer c = sqlSession.selectOne(statement,customer);
+		
+		//输出customer对象的内容。
+		log.info(c.toString());
 		
 		sqlSession.close();
 	}

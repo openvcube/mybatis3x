@@ -21,7 +21,6 @@
 			</dataSource>
 		</environment>
 	</environments>
-
 	<mappers>
 		<mapper resource="com/openv/mybatis/mapper/example/cache/testcache-ref-mapper.xml"  /> 
 		<mapper resource="com/openv/mybatis/mapper/example/cache/testcache-mapper.xml"  /> 
@@ -30,6 +29,10 @@
 		<mapper resource="com/openv/mybatis/mapper/example/where/where-mapper.xml"  /> 
 		<mapper resource="com/openv/mybatis/mapper/example/set/set-mapper.xml"  /> 
 		<mapper resource="com/openv/mybatis/mapper/example/foreach/foreach-mapper.xml"  /> 
+		<mapper resource="com/openv/mybatis/mapper/example/trim/trim-mapper.xml"  /> 
+		<mapper resource="com/openv/mybatis/mapper/example/choose/choose-mapper.xml"  /> 
+		<mapper resource="com/openv/mybatis/mapper/example/bind/bind-mapper.xml"  /> 
+		<mapper resource="com/openv/mybatis/mapper/example/insert/insert-mapper.xml"  /> 
 	</mappers>
 
 </configuration>

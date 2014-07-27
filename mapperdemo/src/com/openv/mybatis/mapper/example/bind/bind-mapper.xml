@@ -3,11 +3,11 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.openv.mybatis.mapper.example.where"  >
+<mapper namespace="com.openv.mybatis.mapper.example.bind"  >
  
- 	
- 
-	<select id="selectAll"  parameterType="com.openv.mybatis.mapper.example.Customer"  resultType="com.openv.mybatis.mapper.example.Customer"  >
+	<select id="select"  parameterType="com.openv.mybatis.mapper.example.Customer" 
+	 resultType="com.openv.mybatis.mapper.example.Customer"  >
+	 	<bind name="customerId" value="99"/><!-- 定义局部变量customerId 的值为99 -->
 		SELECT
 		customer_id AS customerId ,
 		store_id AS storeId,
@@ -21,13 +21,12 @@
 		last_update AS lastUpdate
 		FROM customer 
 		<where>
-			<if test="customerId!=null and customerId !='' ">
-				AND  customer_id =#{customerId}
-			</if>
-			<if test="firstName!=null and  firstName!='' ">
-				AND  first_name =#{firstName}
+			<if test="customerId !=null and customerId!='' "> 
+				AND customer_id=#{customerId}
 			</if>
 		</where>
+	
 	</select>
+	
 
 </mapper>
