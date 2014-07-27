@@ -1,7 +1,7 @@
 /**
  * Copyright(c) http://www.open-v.com
  */
-package com.openv.mybatis.configuration;
+package com.openv.mybatis.configuration.example;
 
 import java.util.Properties;
 
@@ -28,12 +28,13 @@ import org.apache.ibatis.session.RowBounds;
  */
 @Intercepts({@Signature(
 		  type= Executor.class,//声明要进行拦截接口。
-		  method = "query",//要拦截的目标方法。
-		  args = {MappedStatement.class,Object.class,RowBounds.class,ResultHandler.class})})//要拦截的目标方法的参数类型
-public class MyQueryInterceptor implements Interceptor{
+		  method = "update",//要拦截的目标方法。
+		  args = {MappedStatement.class,Object.class})})//要拦截的目标方法的参数类型
+public class MyUpdateInterceptor implements Interceptor{
 
 	@Override
 	public Object intercept(Invocation invocation) throws Throwable {
+		//开发人员自己业务逻辑处理。TODO
 		return invocation.proceed();
 	}
 

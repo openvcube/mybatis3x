@@ -1,7 +1,7 @@
 /**
  * Copyright(c) http://www.open-v.com
  */
-package com.openv.mybatis.configuration;
+package com.openv.mybatis.configuration.example;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -13,7 +13,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-import com.openv.mybatis.configuration.Customer;
+import com.openv.mybatis.configuration.example.Customer;
 
 /**
  * <pre>
@@ -31,12 +31,12 @@ public class CustomerQuery {
 	private static final Log log = LogFactory.getLog(CustomerQuery.class);
 	
 	public static void main(String[] args) throws IOException {
-		String resource = "com/openv/mybatis/configuration/mybatis-config.xml";
+		String resource = "com/openv/mybatis/configuration/example/mybatis-config.xml";
 		InputStream inputStream = Resources.getResourceAsStream(resource);
 		SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 		SqlSession sqlSession = sqlSessionFactory.openSession();
 		
-		String statementId ="com.openv.mybatis.configuration.Customer.selectById";
+		String statementId ="com.openv.mybatis.configuration.example.Customer.selectById";
 		String customerId = "1";//客户ID
 		Customer customer = sqlSession.selectOne(statementId, customerId);
 		

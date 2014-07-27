@@ -1,7 +1,7 @@
 /**
  * Copyright(c) http://www.open-v.com
  */
-package com.openv.mybatis.configuration;
+package com.openv.mybatis.configuration.example;
 
 import org.apache.ibatis.annotations.Result;
 import org.apache.ibatis.annotations.Results;

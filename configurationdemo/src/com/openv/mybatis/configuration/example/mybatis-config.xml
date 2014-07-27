@@ -12,22 +12,22 @@
 	</settings>
 	
 	<typeAliases >
-		<typeAlias type="com.openv.mybatis.configuration.Customer"  alias="Customer" />
+		<typeAlias type="com.openv.mybatis.configuration.example.Customer"  alias="Customer" />
 		<package name="com.openv.mybatis.configuration"/> 
 	</typeAliases>
 	
 	<typeHandlers>
-		<typeHandler handler="com.openv.mybatis.configuration.MyCharTypeHandler" jdbcType="VARCHAR" /> 
+		<typeHandler handler="com.openv.mybatis.configuration.example.MyCharTypeHandler" jdbcType="VARCHAR" /> 
 	<!-- <package name="com.openv.mybatis.configuration"/> -->
 	</typeHandlers>
 	
-	<objectFactory type="com.openv.mybatis.configuration.MyObjectFactory">
+	<objectFactory type="com.openv.mybatis.configuration.example.MyObjectFactory">
 	</objectFactory>
 	
-	<objectWrapperFactory type="com.openv.mybatis.configuration.MyCustomerObjectWrapperFactory"/>
+	<objectWrapperFactory type="com.openv.mybatis.configuration.example.MyCustomerObjectWrapperFactory"/>
 	
 	<plugins>
-		<plugin interceptor="com.openv.mybatis.configuration.MyUpdateInterceptor"></plugin>
+		<plugin interceptor="com.openv.mybatis.configuration.example.MyUpdateInterceptor"></plugin>
 	</plugins>
 	
 	
@@ -78,7 +78,7 @@
 	</databaseIdProvider>
 
 	<mappers>
-		<mapper resource="com/openv/mybatis/configuration/customer-mapper.xml"  /> 
+		<mapper resource="com/openv/mybatis/configuration/example/customer-mapper.xml"  /> 
 	<!--<mapper url="file:///D:/mybatis32/customerdemo/src/com/openv/mybatis/configuration/customer-mapper.xml" /> -->
 	<!-- <package name="com.openv.mybatis.configuration"/> -->
 	</mappers>
