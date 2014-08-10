@@ -7,8 +7,6 @@
 
 	<cache >
 	</cache>
-	<cache  >
-	</cache>
  
 
 	<select id="selectById" resultType="com.openv.mybatis.example.Customer"   databaseId="oracle"

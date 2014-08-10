@@ -5,12 +5,6 @@
 
 <mapper namespace="com.openv.mybatis.example.Customer"   >
 
-	<cache >
-	</cache>
-	<cache  >
-	</cache>
- 
-
 	<select id="selectById" resultType="com.openv.mybatis.example.Customer"   databaseId="oracle"
 		parameterType="string" lang="org.apache.ibatis.submitted.language.VelocityLanguageDriver1111" >
 		SELECT
