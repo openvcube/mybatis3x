@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.openv.mybatis.redevelop.example">
+
+	<select id="selectCustomer" resultType="com.openv.mybatis.redevelop.example.Customer"
+		parameterType="com.openv.mybatis.redevelop.example.Customer"  >
+		SELECT
+			customer_id AS customerId ,
+			store_id AS storeId,
+			first_name AS
+			firstName,
+			last_name AS lastName,
+			email,
+			address_id AS
+			addressId,
+			active,
+			create_date AS createDate,
+			last_update AS lastUpdate
+		FROM customer
+		<where>
+				last_name LIKE CONCAT(CONCAT('%',#{lastName}),'%')
+		</where>
+	</select>
+	
+	<select id="selectEmp" resultType="com.openv.mybatis.redevelop.example.Emp"
+		parameterType="com.openv.mybatis.redevelop.example.Emp"  >
+		SELECT
+			empno,
+			ename,
+			job,
+			mgr,
+			hiredate,
+			sal,
+			comm,
+			deptno
+		FROM emp
+	</select>
+
+</mapper>
