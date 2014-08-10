@@ -21,7 +21,7 @@ import org.apache.ibatis.annotations.Select;
  */
 public interface ICustomerMapper {
 
-	final String selectById = "<script>SELECT * FROM customer WHERE customer_id =#{customerId}</script>";
+	final String selectById = "SELECT * FROM customer WHERE customer_id =#{customerId}";
 
 	@Select(selectById)
 	@Results(value = {
