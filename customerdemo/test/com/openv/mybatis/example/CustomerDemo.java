@@ -34,7 +34,7 @@ public class CustomerDemo {
 		SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 		SqlSession sqlSession = sqlSessionFactory.openSession();
 		
-		String statementId ="com.openv.mybatis.example.Customer.selectById";
+		String statementId ="com.openv.mybatis.example.selectById";
 		String customerId = "1";//客户ID
 		Customer customer = sqlSession.selectOne(statementId, customerId);
 		
