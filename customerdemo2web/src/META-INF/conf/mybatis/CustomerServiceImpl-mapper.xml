@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="bean">
+
+	<select id="queryCustomer" resultType="com.openv.mybatis.customerdemo2web.bean.Customer"
+		parameterType="com.openv.mybatis.customerdemo2web.bean.Customer" databaseId="mysql">
+		SELECT
+		customer_id AS customerId ,
+		store_id AS storeId,
+		first_name AS firstName,
+		last_name AS lastName,
+		email,
+		address_id AS
+		addressId,
+		active,
+		create_date AS createDate,
+		last_update AS lastUpdate
+		FROM customer
+		<include refid="queryCustomer_where"/>
+	</select>
+	
+	<select id="queryCustomer_count" resultType="int"
+		parameterType="com.openv.mybatis.customerdemo2web.bean.Customer"  databaseId="mysql">
+		SELECT
+ 			COUNT(1)
+		FROM customer
+		<include refid="queryCustomer_where"/>
+	</select>
+	
+	<sql id="queryCustomer_where">
+		<where>
+			<if test="firstName!=null and firstName!='' ">
+				first_name LIKE CONCAT('%',CONCAT(#{firstName},'%')) 
+			</if>
+			<if test="lastName!=null and lastName!='' ">
+				AND last_name LIKE CONCAT('%',CONCAT(#{lastName},'%')) 
+			</if>
+			<if test="email!=null and email!='' ">
+				AND email LIKE CONCAT('%',CONCAT(#{email},'%')) 
+			</if>
+		</where>
+	</sql>
+
+	<select id="selectOneCustomer" resultType="com.openv.mybatis.customerdemo2web.bean.Customer"
+		parameterType="string" databaseId="mysql" >
+		SELECT
+		customer_id AS customerId ,
+		store_id AS storeId,
+		first_name AS firstName,
+		last_name AS lastName,
+		email,
+		address_id AS
+		addressId,
+		active,
+		create_date AS createDate,
+		last_update AS lastUpdate
+		FROM customer
+	</select>
+
+	<insert id="insertCustomer" parameterType="com.openv.mybatis.customerdemo2web.bean.Customer">
+		INSERT INTO customer (
+		customer_id,
+		store_id,
+		first_name ,
+		last_name ,
+		email,
+		address_id,
+		active,
+		create_date,
+		last_update
+		)VALUES (
+		#{customerId},
+		#{storeId},
+		#{firstName},
+		#{lastName},
+		#{email},
+		#{addressId},
+		#{active},
+		#{createDate},
+		#{lastUpdate,jdbcType=TIMESTAMP}
+		)
+	</insert>
+
+	<update id="updateCustomer" parameterType="com.openv.mybatis.customerdemo2web.bean.Customer"  databaseId="mysql">
+		UPDATE customer SET
+		first_name= #{firstName},
+		last_name=#{lastName},
+		email= #{email},
+		active= #{active}
+		WHERE customer_id = #{customerId}
+	</update>
+
+	<delete id="deleteCustomer" parameterType="string"  databaseId="mysql">
+		DELETE customer WHERE
+		customer_id = #{customerId}
+	</delete>
+
+
+</mapper>

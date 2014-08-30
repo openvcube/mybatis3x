@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:util="http://www.springframework.org/schema/util" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
+	http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- 数据源配置 -->
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close" lazy-init="true" primary="true">
+		<!-- 数据库驱动 -->
+		<property name="driverClassName">
+			<value>com.mysql.jdbc.Driver</value>
+		</property>
+		<!-- 连接URL -->
+		<property name="url">
+			<value>jdbc:mysql://localhost:3306/sakila</value>
+		</property>
+		<!-- 用户名 -->
+		<property name="username">
+			<value>root</value>
+		</property>
+		<!-- 密码 -->
+		<property name="password">
+			<value></value>
+		</property>
+		<!-- 验证连接是否有效的SQL -->
+		<property name="validationQuery">
+			<value>select 1 from dual</value>
+		</property>
+	</bean>
+
+	<!-- 配置数据库提供商 -->
+	<bean id="vendorProps" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+		<property name="properties">
+			<props>
+				<prop key="MySQL">mysql</prop>
+				<prop key="Oracle">oracle</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean id="databaseIdProvider" class="org.apache.ibatis.mapping.VendorDatabaseIdProvider">
+		<property name="properties" ref="vendorProps" />
+	</bean>
+
+	<!-- 配置sqlSessionFactory -->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<!--引入mybatis-config.xml配置文件  -->
+		<property name="configLocation" value="classpath:/META-INF/conf/mybatis/customerdemo2web-config.xml" />
+		<!--引入mybatis映射文件  -->
+		<property name="mapperLocations" value="classpath:META-INF/conf/mybatis/*-mapper.xml" />
+		<!--引入数据库提供商  -->
+		<property name="databaseIdProvider" ref="databaseIdProvider" />
+	</bean>
+	
+	<!-- 声明事务 -->
+	<bean id="dataSourceTransactionManager" 
+		 class="org.springframework.jdbc.datasource.DataSourceTransactionManager" lazy-init="true">
+		<property name="dataSource" ref="dataSource"/>
+	</bean>
+	
+	<!-- 配置拦截的方法 -->
+	<tx:advice id="txadvice" transaction-manager="dataSourceTransactionManager">
+		<tx:attributes>
+			<tx:method name="select*" propagation="REQUIRED" read-only="true"/>
+		</tx:attributes>
+	</tx:advice>
+	
+	<!-- 配置切面 -->
+	<aop:config>
+		<aop:pointcut id="serviceOperation"
+			expression="execution(* com.openv..*Service.*(..))" />
+		<aop:advisor pointcut-ref="serviceOperation" advice-ref="txadvice" />
+	</aop:config>
+	
+	<!-- 业务接口服务 -->
+	<bean id="customerService" class="com.openv.mybatis.customerdemo2web.service.impl.CustomerServiceImpl"> 
+		<property name="sqlSessionFactory" ref="sqlSessionFactory"/>
+	</bean>
+	
+</beans>
