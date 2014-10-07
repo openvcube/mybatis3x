@@ -30,7 +30,7 @@ import com.openv.mybatis.example.Customer;
 public class InsertDemo {
 	private static final Log log = LogFactory.getLog(InsertDemo.class);
 	public static void main(String[] args) throws IOException {
-		String resource = "com/openv/mybatis/mapper/example/mybatis-config.xml";
+		String resource = "com/openv/mybatis/example/mybatis-config.xml";
 		InputStream inputStream = Resources.getResourceAsStream(resource);
 		SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 		SqlSession sqlSession = sqlSessionFactory.openSession();
