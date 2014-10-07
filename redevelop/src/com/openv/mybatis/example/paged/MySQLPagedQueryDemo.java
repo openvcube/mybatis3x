@@ -29,9 +29,9 @@ import com.openv.mybatis.example.Customer;
  *    修改后版本:     修改人：  修改日期:     修改内容: 
  * </pre>
  */
-public class TestMySQLPagedQuery {
+public class MySQLPagedQueryDemo {
 	
-	private final static Log log = LogFactory.getLog(TestMySQLPagedQuery.class);
+	private final static Log log = LogFactory.getLog(MySQLPagedQueryDemo.class);
 	
 	public static void main(String[] args) throws Exception {
 		String resource = "com/openv/mybatis/redevelop/example/mybatis-config.xml";

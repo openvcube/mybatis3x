@@ -28,12 +28,12 @@ import com.openv.mybatis.example.Emp;
  *    修改后版本:     修改人：  修改日期:     修改内容: 
  * </pre>
  */
-public class TestOraclePagedQuery {
+public class OraclePagedQueryDemo {
 	
-	private final static Log log = LogFactory.getLog(TestOraclePagedQuery.class);
+	private final static Log log = LogFactory.getLog(OraclePagedQueryDemo.class);
 	
 	public static void main(String[] args) throws Exception {
-		String resource = "com/openv/mybatis/redevelop/example/mybatis-config.xml";
+		String resource = "com/openv/mybatis/example/mybatis-config.xml";
 		
 		InputStream inputStream = Resources.getResourceAsStream(resource);
 		SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream,"oracle");

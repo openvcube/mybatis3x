@@ -40,7 +40,7 @@
 	</environments>
 
 	<mappers>
-		<mapper resource="com/openv/mybatis/redevelop/example/customer-mapper.xml"  /> 
+		<mapper resource="com/openv/mybatis/example/customer-mapper.xml"  /> 
 	</mappers>
 
 </configuration>
