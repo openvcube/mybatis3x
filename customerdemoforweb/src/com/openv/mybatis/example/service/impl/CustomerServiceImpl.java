@@ -26,7 +26,6 @@ import com.openv.mybatis.example.service.ICustomerService;
  */
 public class CustomerServiceImpl extends SqlSessionDaoSupport  implements ICustomerService{
 	
-
 	@Override
 	public PageResult<Customer> queryCustomer(Customer customer, int pageIndex,
 			int pageSize) {
@@ -42,32 +41,6 @@ public class CustomerServiceImpl extends SqlSessionDaoSupport  implements ICusto
 		pr.setTotalNum(totalNum);
 		pr.setData(customerList);
 		return pr;
-	}
-
-	@Override
-	public int insertCustomer(Customer customer) {
-		int i =this.getSqlSession().insert("bean.insertCustomer", customer);
-		return i;
-	}
-
- 
-	@Override
-	public int updateCustomer(Customer customer) {
-		int u =this.getSqlSession().update("bean.updateCustomer", customer);
-		return u;
-	}
-
-	@Override
-	public int deleteCustomer(String customerId) {
-		int d =this.getSqlSession().delete("bean.deleteCustomer", customerId);
-		return d;
-	}
-
-	@Override
-	public Customer selectOneCustomer(String customerId){
-		String statementId ="com.openv.mybatis.example.Customer.selectById";
-		Customer customer = this.getSqlSession().selectOne(statementId, customerId);
-		return customer;
 	}
 	
 }

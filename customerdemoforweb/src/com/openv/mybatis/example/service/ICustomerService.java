@@ -28,31 +28,4 @@ public interface ICustomerService {
 	 */
 	public PageResult<Customer> queryCustomer(Customer customer,int pageIndex,int pageSize);
 	
-	/**
-	 *  根据客户ID查询客户信息。
-	 * @param customerId 客户ID
-	 * @return Customer
-	 */
-	public Customer selectOneCustomer(String customerId);
-	
-	/**
-	 * 添加客户。
-	 * @param customer Customer
-	 * @return int 
-	 */
-	public int insertCustomer(Customer customer);
-	
-	/**
-	 * 修改客户信息。
-	 * @param customer Customer
-	 * @return int 
-	 */
-	public int updateCustomer(Customer customer);
-	
-	/**
-	 * 删除客户。
-	 * @param customer Customer
-	 * @return int 
-	 */
-	public int deleteCustomer(String customerId);
 }
