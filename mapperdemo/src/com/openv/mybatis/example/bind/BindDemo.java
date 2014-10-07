@@ -5,6 +5,7 @@ package com.openv.mybatis.example.bind;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Properties;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -31,7 +32,9 @@ public class BindDemo {
 	public static void main(String[] args) throws IOException {
 		String resource = "com/openv/mybatis/example/mybatis-config.xml";
 		InputStream inputStream = Resources.getResourceAsStream(resource);
-		SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+		Properties props = new Properties();
+		props.put("custId", "77");
+		SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream,props);
 		SqlSession sqlSession = sqlSessionFactory.openSession();
 		
 		String statement ="com.openv.mybatis.example.bind.select";

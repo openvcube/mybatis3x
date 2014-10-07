@@ -4,6 +4,8 @@
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	
+	<properties></properties>
+	
 	<environments default="product">
 		<!-- 生产环境 -->
 		<environment id="product">

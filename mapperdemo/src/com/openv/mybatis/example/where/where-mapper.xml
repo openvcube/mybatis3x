@@ -22,7 +22,7 @@
 		FROM customer 
 		<where>
 			<if test="customerId!=null and customerId !='' ">
-				AND  customer_id =#{customerId}
+				AND   customer_id =#{customerId}
 			</if>
 			<if test="firstName!=null and  firstName!='' ">
 				AND  first_name =#{firstName}

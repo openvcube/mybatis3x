@@ -4,10 +4,10 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.openv.mybatis.example.bind"  >
- 
+ 	
 	<select id="select"  parameterType="com.openv.mybatis.example.Customer" 
 	 resultType="com.openv.mybatis.example.Customer"  >
-	 	<bind name="customerId" value="99"/><!-- 定义局部变量customerId 的值为99 -->
+	 	<bind name="customerId" value="${custId}"/><!-- 定义局部变量customerId 的值为99 -->
 		SELECT
 		customer_id AS customerId ,
 		store_id AS storeId,
