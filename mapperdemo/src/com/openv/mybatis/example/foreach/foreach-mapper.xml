@@ -19,7 +19,7 @@
 		last_update AS lastUpdate
 		FROM customer WHERE
 		first_name IN  
-		<foreach collection="array" item="name" open="("  separator="," close=")">
+		<foreach collection="list" item="name" open="("  separator="," close=")">
 			#{name}
 		</foreach>
 	</select>
