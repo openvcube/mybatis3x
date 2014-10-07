@@ -6,8 +6,7 @@ package com.openv.mybatis.example.service.impl;
 import java.util.List;
 
 import org.apache.ibatis.session.RowBounds;
-import org.apache.ibatis.session.SqlSession;
-import org.apache.ibatis.session.SqlSessionFactory;
+import org.mybatis.spring.support.SqlSessionDaoSupport;
 
 import com.openv.mybatis.example.bean.Customer;
 import com.openv.mybatis.example.paged.PageResult;
@@ -25,9 +24,8 @@ import com.openv.mybatis.example.service.ICustomerService;
  *    修改后版本:     修改人：  修改日期:     修改内容: 
  * </pre>
  */
-public class CustomerServiceImpl implements ICustomerService{
+public class CustomerServiceImpl extends SqlSessionDaoSupport  implements ICustomerService{
 	
-	private SqlSessionFactory sqlSessionFactory;
 
 	@Override
 	public PageResult<Customer> queryCustomer(Customer customer, int pageIndex,
@@ -35,65 +33,41 @@ public class CustomerServiceImpl implements ICustomerService{
 		PageResult<Customer> pr = new PageResult<Customer>();
 		pr.setPageIndex(pageIndex);
 		pr.setPageSize(pageSize);
-		SqlSession sqlSession = sqlSessionFactory.openSession();
 		int offset = (pageIndex-1)*pageSize;
 		RowBounds rowBounds = new RowBounds(offset,pageSize);
-		List<Customer> customerList = sqlSession.selectList("bean.queryCustomer",customer,rowBounds);
+		List<Customer> customerList = this.getSqlSession().selectList("bean.queryCustomer",customer,rowBounds);
 		
-		Integer totalNum =sqlSession.selectOne("bean.queryCustomer_count", customer);
+		Integer totalNum =this.getSqlSession().selectOne("bean.queryCustomer_count", customer);
 		
 		pr.setTotalNum(totalNum);
 		pr.setData(customerList);
-		sqlSession.close();
 		return pr;
 	}
 
 	@Override
 	public int insertCustomer(Customer customer) {
-		SqlSession sqlSession = sqlSessionFactory.openSession();
-		int i =sqlSession.insert("bean.insertCustomer", customer);
-		sqlSession.close();
+		int i =this.getSqlSession().insert("bean.insertCustomer", customer);
 		return i;
 	}
 
  
 	@Override
 	public int updateCustomer(Customer customer) {
-		SqlSession sqlSession = sqlSessionFactory.openSession();
-		int u =sqlSession.update("bean.updateCustomer", customer);
-		sqlSession.close();
+		int u =this.getSqlSession().update("bean.updateCustomer", customer);
 		return u;
 	}
 
 	@Override
 	public int deleteCustomer(String customerId) {
-		SqlSession sqlSession = sqlSessionFactory.openSession();
-		int d =sqlSession.delete("bean.deleteCustomer", customerId);
-		sqlSession.close();
+		int d =this.getSqlSession().delete("bean.deleteCustomer", customerId);
 		return d;
 	}
 
 	@Override
 	public Customer selectOneCustomer(String customerId){
-		SqlSession sqlSession = sqlSessionFactory.openSession();
 		String statementId ="com.openv.mybatis.example.Customer.selectById";
-		Customer customer = sqlSession.selectOne(statementId, customerId);
-		sqlSession.close();
+		Customer customer = this.getSqlSession().selectOne(statementId, customerId);
 		return customer;
-	}
-
-	/**
-	 * @return 返回 sqlSessionFactory。
-	 */
-	public SqlSessionFactory getSqlSessionFactory() {
-		return sqlSessionFactory;
-	}
-
-	/**
-	 * @param sqlSessionFactory 设置 sqlSessionFactory。
-	 */
-	public void setSqlSessionFactory(SqlSessionFactory sqlSessionFactory) {
-		this.sqlSessionFactory = sqlSessionFactory;
 	}
 	
 }

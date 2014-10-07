@@ -4,8 +4,8 @@
 
 <mapper namespace="bean">
 
-	<select id="queryCustomer" resultType="com.openv.mybatis.customerdemo2web.bean.Customer"
-		parameterType="com.openv.mybatis.customerdemo2web.bean.Customer" databaseId="mysql">
+	<select id="queryCustomer" resultType="com.openv.mybatis.example.bean.Customer"
+		parameterType="com.openv.mybatis.example.bean.Customer" databaseId="mysql">
 		SELECT
 		customer_id AS customerId ,
 		store_id AS storeId,
@@ -22,7 +22,7 @@
 	</select>
 	
 	<select id="queryCustomer_count" resultType="int"
-		parameterType="com.openv.mybatis.customerdemo2web.bean.Customer"  databaseId="mysql">
+		parameterType="com.openv.mybatis.example.bean.Customer"  databaseId="mysql">
 		SELECT
  			COUNT(1)
 		FROM customer
@@ -43,7 +43,7 @@
 		</where>
 	</sql>
 
-	<select id="selectOneCustomer" resultType="com.openv.mybatis.customerdemo2web.bean.Customer"
+	<select id="selectOneCustomer" resultType="com.openv.mybatis.example.bean.Customer"
 		parameterType="string" databaseId="mysql" >
 		SELECT
 		customer_id AS customerId ,
@@ -59,7 +59,7 @@
 		FROM customer
 	</select>
 
-	<insert id="insertCustomer" parameterType="com.openv.mybatis.customerdemo2web.bean.Customer">
+	<insert id="insertCustomer" parameterType="com.openv.mybatis.example.bean.Customer">
 		INSERT INTO customer (
 		customer_id,
 		store_id,
@@ -83,7 +83,7 @@
 		)
 	</insert>
 
-	<update id="updateCustomer" parameterType="com.openv.mybatis.customerdemo2web.bean.Customer"  databaseId="mysql">
+	<update id="updateCustomer" parameterType="com.openv.mybatis.example.bean.Customer"  databaseId="mysql">
 		UPDATE customer SET
 		first_name= #{firstName},
 		last_name=#{lastName},
