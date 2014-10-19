@@ -26,7 +26,7 @@
 	</select>
 	
 	<select id="selectEmp" resultType="com.openv.mybatis.example.Emp"
-		parameterType="com.openv.mybatis.example.Emp"  >
+		parameterType="com.openv.mybatis.example.Emp">
 		SELECT
 			empno,
 			ename,

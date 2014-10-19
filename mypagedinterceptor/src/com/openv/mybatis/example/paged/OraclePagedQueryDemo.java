@@ -30,7 +30,7 @@ import com.openv.mybatis.example.Emp;
  */
 public class OraclePagedQueryDemo {
 	
-	private final static Log log = LogFactory.getLog(OraclePagedQueryDemo.class);
+	private static final Log log = LogFactory.getLog(OraclePagedQueryDemo.class);
 	
 	public static void main(String[] args) throws Exception {
 		String resource = "com/openv/mybatis/example/mybatis-config.xml";

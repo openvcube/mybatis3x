@@ -4,7 +4,6 @@
 package com.openv.mybatis.example.paged;
 
 import java.io.InputStream;
-import java.sql.Connection;
 import java.util.List;
 
 import org.apache.commons.logging.Log;
@@ -34,17 +33,17 @@ public class MySQLPagedQueryDemo {
 	private final static Log log = LogFactory.getLog(MySQLPagedQueryDemo.class);
 	
 	public static void main(String[] args) throws Exception {
-		String resource = "com/openv/mybatis/redevelop/example/mybatis-config.xml";
+		String resource = "com/openv/mybatis/example/mybatis-config.xml";
 		
 		InputStream inputStream = Resources.getResourceAsStream(resource);
-		//build(inputStream,"mysql")指定加载MySQL的环境配置。
+		//build(inputStream,"mysql")指定加载mysql环境配置
 		SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream,"mysql");
 		SqlSession sqlSession = sqlSessionFactory.openSession();
-		//pageIndex表示取第几页：这取第二页。
+		//pageIndex表示取第几页：这取第二页
 		int pageIndex = 2;
-		//每页显示的条数：10条。
+		//每页显示的条数：10条
 		int pageSize =10;
-		//根据pageIndex及pageSize，计算出从数据库表取数的位置offset。
+		//根据pageIndex及pageSize，计算出从数据库表取数的位置offset
 		int offset = (pageIndex-1)*pageSize;
 		RowBounds rowBounds = new RowBounds(offset,pageSize);
 		String statementId ="com.openv.mybatis.example.selectCustomer";
@@ -53,7 +52,7 @@ public class MySQLPagedQueryDemo {
 		List<Customer> customerList = sqlSession.selectList(statementId,param,rowBounds);
 		
 		sqlSession.close();
-		//输出customerList的内容。
+		//输出customerList的内容
 		log.info("查询结果：\n"+customerList);
 	}
 }
