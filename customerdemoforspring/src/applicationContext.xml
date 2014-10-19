@@ -63,7 +63,7 @@
 	<bean id="customerService" class="com.openv.mybatis.example.service.impl.CustomerServiceImpl"> 
 		<property name="sqlSessionFactory" ref="sqlSessionFactory"/>
 	</bean>
-<!-- 	
+	<!-- 	
 	声明事务
 	<bean id="dataSourceTransactionManager" 
 		 class="org.springframework.jdbc.datasource.DataSourceTransactionManager" lazy-init="true">

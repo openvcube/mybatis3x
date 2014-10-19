@@ -3,13 +3,12 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.openv.mybatis.example.Customer"   >
+<mapper namespace="com.openv.mybatis.example.Customer">
 
 	<cache >
 	</cache>
  
-
-	<select id="selectById" resultType="com.openv.mybatis.example.Customer"   databaseId="oracle"
+	<select id="selectById" resultType="com.openv.mybatis.example.Customer" databaseId="oracle"
 		parameterType="string" lang="org.apache.ibatis.submitted.language.VelocityLanguageDriver1111" >
 		SELECT
 		customer_id AS customerId ,
@@ -25,7 +24,7 @@
 		FROM customer WHERE customer_id = #{customerId}
 	</select>
 	
-	<select id="selectById" resultType="com.openv.mybatis.example.Customer"  databaseId="mysql"
+	<select id="selectById" resultType="com.openv.mybatis.example.Customer" databaseId="mysql"
 		parameterType="string">
 		SELECT
 		customer_id AS customerId ,

@@ -17,10 +17,12 @@ import com.openv.mybatis.example.Customer;
  * </pre>
  */
 public interface ICustomerService {
+
 	/**
 	 *  获取客户信息。
 	 * @param customerId 客户ID
 	 * @return Customer
 	 */
 	public Customer selectOneCustomer(String customerId);
+
 }
