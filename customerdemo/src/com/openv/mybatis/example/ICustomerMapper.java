@@ -3,7 +3,6 @@
  */
 package com.openv.mybatis.example;
 
-import org.apache.ibatis.annotations.Lang;
 import org.apache.ibatis.annotations.Result;
 import org.apache.ibatis.annotations.Results;
 import org.apache.ibatis.annotations.Select;
