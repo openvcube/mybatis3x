@@ -6,7 +6,7 @@
 <mapper namespace="com.openv.mybatis.example"   >
 
 	<select id="selectById" resultType="com.openv.mybatis.example.Customer" databaseId="oracle"
-		parameterType="string" lang="org.apache.ibatis.submitted.language.VelocityLanguageDriver1111" >
+		parameterType="string" lang="org.apache.ibatis.submitted.language.VelocityLanguageDriver" >
 		SELECT
 		customer_id AS customerId ,
 		store_id AS storeId,
