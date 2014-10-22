@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.openv.mybatis.example.mapper.SPMapper">
+      <!--
+        1. 设置 statement类型为CALLABLE 
+	    2. 使用call调用:{call xxx (parm1, parm2)} 
+		3. 设置存储过程的参数模式：(IN, OUT, INOUT) 
+		4. 所有参数的类型是 parameterType或parameterMap
+	  -->
+	
+   
+   	<select id="callGetLastName" parameterType="SpOneVO" statementType="CALLABLE">
+    	{ CALL openv_sp_one(
+	    	#{email, mode=IN, jdbcType=VARCHAR},
+	    	#{lastName, mode=OUT, jdbcType=VARCHAR})
+	    }
+	</select>
+	
+	
+	
+	<resultMap type="SPManyVO" id="resultCustomer">
+		<result property="firstName" column="first_name"/>
+	    <result property="lastName" column="last_name"/>
+	    <result property="email" column="email"/>
+	</resultMap>
+	
+	<select id="callGetMany" resultMap="resultCustomer" statementType="CALLABLE">
+    	{ CALL openv_sp_many()}
+	</select>
+    
+</mapper>
