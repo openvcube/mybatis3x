@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+	PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+ <settings>
+    <setting name="defaultScriptingLanguage" value="velocity"/>
+  </settings>
+
+  <typeAliases>
+    <typeAlias alias="velocity" type="org.mybatis.scripting.velocity.Driver"/>
+  </typeAliases>
+
+  <environments default="test">
+		<!-- 测试环境 -->
+		<environment id="test">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="com.mysql.jdbc.Driver" />
+				<property name="url" value="jdbc:mysql://localhost:3306/sakila" />
+				<!--jdbc://mysql://服务名 : 端口 : 数据库名称 -->
+				<property name="username" value="root" /><!-- 用户名 -->
+				<property name="password" value="123456" /><!-- 密码 -->
+			</dataSource>
+		</environment>
+	</environments>
+	
+   <mappers>
+    <mapper resource="com/openv/mybatis/example/mapper/mapper.xml"/>
+  </mappers>
+
+</configuration>
