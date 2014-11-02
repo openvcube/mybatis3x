@@ -26,8 +26,10 @@ import com.openv.mybatis.example.Customer;
  *    修改后版本:     修改人：  修改日期:     修改内容: 
  * </pre>
  */
-public class updateDemo {
-	private static final Log log = LogFactory.getLog(updateDemo.class);
+public class UpdateDemo {
+	
+	private static final Log log = LogFactory.getLog(UpdateDemo.class);
+	
 	public static void main(String[] args) throws IOException {
 		String resource = "com/openv/mybatis/example/mybatis-config.xml";
 		InputStream inputStream = Resources.getResourceAsStream(resource);
@@ -45,4 +47,5 @@ public class updateDemo {
 		sqlSession.commit();
 		sqlSession.close();
 	}
+
 }
