@@ -16,8 +16,15 @@ public class TestAnnotation {
 	
 	public static void main(String[] args) {
 		AnnotationDAO dao=new AnnotationDAO();
-		//dao.insertCountry();
-		//dao.updateCountry();
+		dao.insertCountry();
+		dao.updateCountry();
+		dao.delCountry();
 		dao.selectCountry();
+		dao.selectCustomer();
+		dao.slectSotre();
+		dao.insertCountryWithProvider();
+		dao.updateCountryWithProvider();
+		dao.delCountryWithProvider();
+		dao.selectCountryWithProvider();
 	}
 }
