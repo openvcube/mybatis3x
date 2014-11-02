@@ -29,10 +29,26 @@
 				<property name="driver" value="com.mysql.jdbc.Driver" />
 				<property name="url" value="jdbc:mysql://localhost:3306/sakila" /><!-- 
 					jdbc://mysql://服务名 : 端口 : 数据库名称 -->
-				<property name="username" value="root" /><!-- 用户名 -->
-				<property name="password" value="" /><!-- 密码 -->
+				<!-- 用户名 -->
+				<property name="username" value="root" />
+				<!-- 密码 -->
+				<property name="password" value="" />
 			</dataSource>
 		</environment>
+		<!-- 开发环境 -->
+		<environment id="developer">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="com.mysql.jdbc.Driver" />
+				<!-- jdbc://mysql://服务名 : 端口 : 数据库名称 -->
+				<property name="url" value="jdbc:mysql://localhost:3306/sakila" />
+				<!-- 用户名 -->
+				<property name="username" value="${username}" />
+				<!-- 密码 -->
+				<property name="password" value="${password}" />
+			</dataSource>
+		</environment>
+		
 	</environments>
 
 	<!-- 数据库提供商 -->

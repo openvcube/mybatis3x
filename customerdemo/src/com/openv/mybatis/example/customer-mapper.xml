@@ -74,5 +74,44 @@
 		DELETE customer WHERE
 		customer_id = #{customerId}
 	</delete>
-
+	
+	<select id="selectCustomer" resultType="com.openv.mybatis.example.Customer"
+		parameterType="com.openv.mybatis.example.Customer">
+		SELECT
+			customer_id AS customerId ,
+			store_id AS storeId,
+			first_name AS
+			firstName,
+			last_name AS lastName,
+			email,
+			address_id AS
+			addressId,
+			active,
+			create_date AS createDate,
+			last_update AS lastUpdate
+		FROM customer
+		<where>
+				<if test="lastName!=null and lastName!='' ">
+					last_name LIKE CONCAT(CONCAT('%',#{lastName}),'%')
+				</if>
+		</where>
+	</select>
+	
+	<select id="selectMapCustomer" resultType="map"
+		parameterType="com.openv.mybatis.example.Customer">
+		SELECT
+			customer_id AS customerId ,
+			store_id AS storeId,
+			first_name AS
+			firstName,
+			last_name AS lastName,
+			email,
+			address_id AS
+			addressId,
+			active,
+			create_date AS createDate,
+			last_update AS lastUpdate
+		FROM customer
+	</select>
+	
 </mapper>
