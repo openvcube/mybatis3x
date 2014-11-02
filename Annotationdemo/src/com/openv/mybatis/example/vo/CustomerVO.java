@@ -15,13 +15,20 @@ import java.util.List;
  * </pre>
  */
 public class CustomerVO {
-
+    private int id;
 	public String  lastName;
 	public String  email;
 	private String firstName;
 	private List<Integer> ids=new ArrayList<Integer>();
+	private AddressVO address;
 	
 	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	public String getLastName() {
 		return lastName;
 	}
@@ -50,6 +57,12 @@ public class CustomerVO {
 	}
 	
 	
+	public AddressVO getAddress() {
+		return address;
+	}
+	public void setAddress(AddressVO address) {
+		this.address = address;
+	}
 	@Override
 	public String toString() {
 		return "CustomerVO [lastName=" + lastName + ", email=" + email

@@ -12,19 +12,17 @@ import com.openv.mybatis.example.vo.CustomerVO;
 
 /**
  * <pre>
- * ³ÌĞòµÄÖĞÎÄÃû³Æ¡£
+ * ç¨‹åºçš„ä¸­æ–‡åç§°ã€‚
  * </pre>
  * @author http://www.open-v.com
  * @version 1.00.00
  * <pre>
- * ĞŞ¸Ä¼ÇÂ¼
- *    ĞŞ¸Äºó°æ±¾:     ĞŞ¸ÄÈË£º  ĞŞ¸ÄÈÕÆÚ:     ĞŞ¸ÄÄÚÈİ: 
+ * ä¿®æ”¹è®°å½•
+ *    ä¿®æ”¹åç‰ˆæœ¬:     ä¿®æ”¹äººï¼š  ä¿®æ”¹æ—¥æœŸ:     ä¿®æ”¹å†…å®¹: 
  * </pre>
  */
 public class VelocityDAO {
-    /**
-     * ÒıÓÃ²ÎÊı²éÑ¯
-     */
+  
 	public void slectCustomerWithParam() {
 		SqlSessionFactory sqlSessionFactory = MyBatisConnectionFactory.getSqlSessionFactory();
 		SqlSession session = sqlSessionFactory.openSession();
@@ -41,10 +39,7 @@ public class VelocityDAO {
 		}
 	}
 
-	 /**
-	 *
-     * ÒıÓÃ±í´ïÊ½²éÑ¯
-     */
+	
 	   
 	public void slectCustomerWithExpression() {
 		SqlSessionFactory sqlSessionFactory = MyBatisConnectionFactory.getSqlSessionFactory();
@@ -62,10 +57,7 @@ public class VelocityDAO {
 		}
 	}
 	
-	 /**
-	 *
-    * ÒıÓÃµü´ú±í´ïÊ½²éÑ¯
-    */
+	
 	public void slectCustomerWithIterExpression() {
 		SqlSessionFactory sqlSessionFactory = MyBatisConnectionFactory.getSqlSessionFactory();
 		SqlSession session = sqlSessionFactory.openSession();
