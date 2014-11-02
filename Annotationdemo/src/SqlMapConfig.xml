@@ -4,13 +4,6 @@
 	"http://mybatis.org/dtd/mybatis-3-config.dtd">
 
 <configuration>
- <settings>
-    <setting name="defaultScriptingLanguage" value="velocity"/>
-  </settings>
-
-  <typeAliases>
-    <typeAlias alias="velocity" type="org.mybatis.scripting.velocity.Driver"/>
-  </typeAliases>
 
   <environments default="test">
 		<!-- 测试环境 -->
@@ -21,7 +14,7 @@
 				<property name="url" value="jdbc:mysql://localhost:3306/sakila" />
 				<!--jdbc://mysql://服务名 : 端口 : 数据库名称 -->
 				<property name="username" value="root" /><!-- 用户名 -->
-				<property name="password" value="" /><!-- 密码 -->
+				<property name="password" value="123456" /><!-- 密码 -->
 			</dataSource>
 		</environment>
 	</environments>

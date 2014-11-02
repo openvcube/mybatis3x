@@ -17,8 +17,8 @@ public class TestVelocity {
 	
 	public static void main(String[] args) {
 		VelocityDAO dao=new VelocityDAO();
-	    dao.slectCustomerWithParam();
-		dao.slectCustomerWithExpression();
+	   // dao.slectCustomerWithParam();
+		//dao.slectCustomerWithExpression();
 		dao.slectCustomerWithIterExpression();
 	}
 }

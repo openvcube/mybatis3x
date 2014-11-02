@@ -12,17 +12,17 @@ import com.openv.mybatis.example.vo.SpOneVO;
 
 /**
  * <pre>
- * ³ÌĞòµÄÖĞÎÄÃû³Æ¡£
+ * ç¨‹åºçš„ä¸­æ–‡åç§°ã€‚
  * </pre>
  * @author http://www.open-v.com
  * @version 1.00.00
  * <pre>
- * ĞŞ¸Ä¼ÇÂ¼
- *    ĞŞ¸Äºó°æ±¾:     ĞŞ¸ÄÈË£º  ĞŞ¸ÄÈÕÆÚ:     ĞŞ¸ÄÄÚÈİ: 
+ * ä¿®æ”¹è®°å½•
+ *    ä¿®æ”¹åç‰ˆæœ¬:     ä¿®æ”¹äººï¼š  ä¿®æ”¹æ—¥æœŸ:     ä¿®æ”¹å†…å®¹: 
  * </pre>
  */
 public class StoreProcedureDAO {
-
+     //ï¿½ï¿½ï¿½emailï¿½ï¿½Ñ¯ï¿½Í»ï¿½lastName
 	public void callGetLastName() {
 		SqlSessionFactory sqlSessionFactory = MyBatisConnectionFactory.getSqlSessionFactory();
 		SqlSession session = sqlSessionFactory.openSession();
@@ -65,7 +65,7 @@ public class StoreProcedureDAO {
 		try {
 			SpOneVO param=new SpOneVO();
 			param.setEmail("MARY.SMITH@sakilacustomer.org");
-			spMapper.callGetLastName(param);
+			spMapper.callGetLastNameAnnotations(param);
 			String lastName=param.getLastName();
 			System.out.println(lastName);
 			 

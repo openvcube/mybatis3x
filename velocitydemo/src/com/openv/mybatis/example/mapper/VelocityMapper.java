@@ -7,13 +7,13 @@ import com.openv.mybatis.example.vo.CustomerVO;
 
 /**
  * <pre>
- * ³ÌĞòµÄÖĞÎÄÃû³Æ¡£
+ * ç¨‹åºçš„ä¸­æ–‡åç§°ã€‚
  * </pre>
  * @author http://www.open-v.com
  * @version 1.00.00
  * <pre>
- * ĞŞ¸Ä¼ÇÂ¼
- *    ĞŞ¸Äºó°æ±¾:     ĞŞ¸ÄÈË£º  ĞŞ¸ÄÈÕÆÚ:     ĞŞ¸ÄÄÚÈİ: 
+ * ä¿®æ”¹è®°å½•
+ *    ä¿®æ”¹åç‰ˆæœ¬:     ä¿®æ”¹äººï¼š  ä¿®æ”¹æ—¥æœŸ:     ä¿®æ”¹å†…å®¹: 
  * </pre>
  */
 public interface VelocityMapper {
