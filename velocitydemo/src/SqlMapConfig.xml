@@ -4,7 +4,8 @@
 	"http://mybatis.org/dtd/mybatis-3-config.dtd">
 
 <configuration>
- <settings>
+  
+  <settings>
     <setting name="defaultScriptingLanguage" value="velocity"/>
   </settings>
 
@@ -27,7 +28,7 @@
 	</environments>
 	
    <mappers>
-    <mapper resource="com/openv/mybatis/example/mapper/mapper.xml"/>
-  </mappers>
+    <mapper resource="com/openv/mybatis/example/mapper/velocity-mapper.xml"/>
+   </mappers>
 
 </configuration>

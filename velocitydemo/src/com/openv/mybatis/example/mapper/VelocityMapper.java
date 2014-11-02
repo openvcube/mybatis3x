@@ -24,4 +24,4 @@ public interface VelocityMapper {
 	
 	List<CustomerVO> getNameWithIterExpression(CustomerVO param);
 
- }
+}
