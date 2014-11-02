@@ -39,8 +39,8 @@ public class MySQLPagedQueryDemo {
 		//build(inputStream,"mysql")指定加载mysql环境配置
 		SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream,"mysql");
 		SqlSession sqlSession = sqlSessionFactory.openSession();
-		//pageIndex表示取第几页：这取第二页
-		int pageIndex = 2;
+		//pageIndex表示取第几页：这取第一页
+		int pageIndex = 1;
 		//每页显示的条数：10条
 		int pageSize =10;
 		//根据pageIndex及pageSize，计算出从数据库表取数的位置offset
@@ -48,7 +48,6 @@ public class MySQLPagedQueryDemo {
 		RowBounds rowBounds = new RowBounds(offset,pageSize);
 		String statementId ="com.openv.mybatis.example.selectCustomer";
 		Customer param = new Customer();
-		param.setLastName("F");
 		List<Customer> customerList = sqlSession.selectList(statementId,param,rowBounds);
 		
 		sqlSession.close();

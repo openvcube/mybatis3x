@@ -21,7 +21,9 @@
 			last_update AS lastUpdate
 		FROM customer
 		<where>
-				last_name LIKE CONCAT(CONCAT('%',#{lastName}),'%')
+				<if test="lastName!=null and lastName!='' ">
+					last_name LIKE CONCAT(CONCAT('%',#{lastName}),'%')
+				</if>
 		</where>
 	</select>
 	
