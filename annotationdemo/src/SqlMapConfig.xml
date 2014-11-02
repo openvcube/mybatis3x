@@ -14,7 +14,7 @@
 				<property name="url" value="jdbc:mysql://localhost:3306/sakila" />
 				<!--jdbc://mysql://服务名 : 端口 : 数据库名称 -->
 				<property name="username" value="root" /><!-- 用户名 -->
-				<property name="password" value="123456" /><!-- 密码 -->
+				<property name="password" value="" /><!-- 密码 -->
 			</dataSource>
 		</environment>
 	</environments>

@@ -34,8 +34,7 @@ public class ConfigBuildDemo {
  
 	private static final Log log = LogFactory.getLog(ConfigBuildDemo.class);
 	
-	public static void main(String[] args) throws IOException {
-	 
+	public static void main(String[] args) throws IOException {	 
 		Configuration config = new Configuration();
 		TransactionFactory transactionFactory = new JdbcTransactionFactory();
 		//数据库驱动、url、用户名、密码
