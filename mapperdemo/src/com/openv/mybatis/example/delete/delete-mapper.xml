@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.openv.mybatis.example.delete">
+  
+	<delete id="deleteCustomer"  parameterType="string">
+		 DELETE FROM customer WHERE customer_id = #{customerId}
+	</delete>
+  
+	<delete id="deletePayment"  parameterType="string">
+		 DELETE FROM payment WHERE customer_id = #{customerId}
+	</delete>
+  
+	<delete id="deleteRental"  parameterType="string">
+		 DELETE FROM rental WHERE customer_id = #{customerId}
+	</delete>
+
+</mapper>
