@@ -22,21 +22,13 @@ import com.openv.mybatis.example.vo.SpOneVO;
  * </pre>
  */
 public interface SPMapper {
-	/**
-	 * 
-	 * @param param
-	 * @return
-	 */
 	String callGetLastName(SpOneVO param);
-	List<SpManyVO> callGetMany();
 
-	
-	
+	List<SpManyVO> callGetMany();
 	
 	@Select(value= "{ CALL openv_sp_one( #{email, mode=IN, jdbcType=VARCHAR}, #{lastName, mode=OUT, jdbcType=VARCHAR})}")
 	@Options(statementType = StatementType.CALLABLE)
-	Object callGetLastNameAnnotations(SpOneVO param);
-	
+	Object callGetLastNameAnnotations(SpOneVO param);	
 	 
 	@Select(value= "{ CALL openv_sp_many()}")
 	@Options(statementType = StatementType.CALLABLE)

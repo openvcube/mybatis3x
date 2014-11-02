@@ -22,7 +22,7 @@ import com.openv.mybatis.example.vo.SpOneVO;
  * </pre>
  */
 public class StoreProcedureDAO {
-     //���email��ѯ�ͻ�lastName
+    
 	public void callGetLastName() {
 		SqlSessionFactory sqlSessionFactory = MyBatisConnectionFactory.getSqlSessionFactory();
 		SqlSession session = sqlSessionFactory.openSession();
@@ -40,7 +40,6 @@ public class StoreProcedureDAO {
 	}
 
 	public void callGetMany() {
-
 		SqlSessionFactory sqlSessionFactory = MyBatisConnectionFactory.getSqlSessionFactory();
 		SqlSession session = sqlSessionFactory.openSession();
 		
