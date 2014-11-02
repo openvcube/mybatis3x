@@ -134,7 +134,7 @@ public class AnnotationDAO {
 			StoreVO store=	aMapper.selectStoreByStoreId(1);
 		    List<CustomerVO> customerList=store.getCustomers();
 		    if(customerList!=null){
-	  			System.out.println(customerList.size());
+	  			System.out.println("店铺1的客户数为"+ customerList.size());
 		    }
  		} catch(Exception e){
 			e.printStackTrace();
@@ -175,8 +175,8 @@ public class AnnotationDAO {
 		try {
  			 CountryVO country=new CountryVO();
  			 country.setCountryName("ee");
- 			 country.setCountryId(126);
- 			 aMapper.updateCountry(country);
+ 			 country.setCountryId(127);
+ 			 aMapper.updateCountryWithProvider(country);
  			 session.commit();
 		} catch(Exception e){
 			e.printStackTrace();
@@ -195,7 +195,7 @@ public class AnnotationDAO {
 		SqlSession session = sqlSessionFactory.openSession();
 		AnnotationMapper aMapper = session.getMapper(AnnotationMapper.class);
 		try {
-  			 aMapper.deleteCountry(126);
+  			 aMapper.deleteCountryWithProvider(127);
  			 session.commit();
 		} catch(Exception e){
 			e.printStackTrace();
@@ -214,9 +214,9 @@ public class AnnotationDAO {
 		SqlSession session = sqlSessionFactory.openSession();
 		AnnotationMapper aMapper = session.getMapper(AnnotationMapper.class);
 		try {
-  			CountryVO country= aMapper.findCountryById(125);
+  			CountryVO country= aMapper.selectCountryWithProvider("Zambia");
   			if(country!=null){
-  	  			System.out.println(country.getCountryName());
+  	  			System.out.println(country.getCountryId());
   			}
  		} catch(Exception e){
 			e.printStackTrace();

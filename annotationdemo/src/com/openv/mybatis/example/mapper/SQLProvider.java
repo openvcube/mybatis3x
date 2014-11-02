@@ -13,7 +13,7 @@ public class SQLProvider {
 		return new SQL() {{
 			SELECT("country_id as countryId, country as countryName, last_update as updateTime");
 		    FROM("country");
-		    WHERE("country like #{countryName}");
+		    WHERE("country =#{countryName}");
 		}}.toString();
 	}
 	

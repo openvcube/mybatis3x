@@ -92,10 +92,9 @@ public interface AnnotationMapper {
 	List<CustomerVO> selectCustomersByStoreId(int storeId);
  
 	//一对一查询
-	@Select("SELECT first_name, last_name from customer where customer_id=#{id}")
+	@Select("SELECT first_name, last_name,address_id from customer where customer_id=#{id}")
 	@Results({
-		@Result(id=true, column="customer_id", property="id"),
-		@Result(column="first_name", property="firstName"),
+ 		@Result(column="first_name", property="firstName"),
 		@Result(column="last_name", property="lastName"),
 		@Result(property="address", column="address_id",one=@One(select="com.openv.mybatis.example.mapper.AnnotationMapper.selectAddressById"))		
 	})
@@ -119,7 +118,7 @@ public interface AnnotationMapper {
 	int updateCountryWithProvider(CountryVO country);
 	
 	@DeleteProvider(type=SQLProvider.class, method="deleteCountry")
-	int deleteCountryWithProvider(int tutorId);
+	int deleteCountryWithProvider(int countryId);
 	
 	@SelectProvider(type=SQLProvider.class, method="findCountryByName")
 	CountryVO selectCountryWithProvider(String countryName);
