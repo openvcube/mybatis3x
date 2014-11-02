@@ -29,10 +29,6 @@
 		<property name="password">
 			<value></value>
 		</property>
-		<!-- 验证连接是否有效的SQL -->
-		<property name="validationQuery">
-			<value>select 1 from dual</value>
-		</property>
 	</bean>
 
 	<!-- 配置数据库提供商 -->

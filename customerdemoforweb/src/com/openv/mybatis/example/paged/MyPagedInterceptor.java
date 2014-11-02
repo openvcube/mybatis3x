@@ -14,6 +14,18 @@ import org.apache.ibatis.plugin.Signature;
 import org.apache.ibatis.session.Configuration;
 import org.apache.ibatis.session.RowBounds;
 
+/**
+ * 
+ * <pre>
+ * 程序的中文名称。
+ * </pre>
+ * @author http://www.open-v.com
+ * @version 1.00.00
+ * <pre>
+ * 修改记录
+ *    修改后版本:     修改人：  修改日期:     修改内容: 
+ * </pre>
+ */
 @Intercepts({ @Signature(type = StatementHandler.class, method = "prepare", args = { Connection.class }) })
 public class MyPagedInterceptor implements Interceptor {
 
