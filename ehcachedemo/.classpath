@@ -12,6 +12,6 @@
 	<classpathentry kind="lib" path="/mybatis3.3-libs/mybatis-ehcache-1.0.3.jar"/>
 	<classpathentry kind="lib" path="/mybatis3.3-libs/ehcache-core-2.6.8.jar"/>
 	<classpathentry kind="lib" path="/mybatis3.3-libs/slf4j-log4j12-1.7.7.jar"/>
-	<classpathentry kind="lib" path="/mybatis3.3-libs/mybatis-3.2.8.jar"/>
+	<classpathentry kind="lib" path="/mybatis3.3-libs/mybatis-3.3.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
