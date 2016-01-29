@@ -6,6 +6,6 @@
 	<classpathentry kind="lib" path="/mybatis3.3-libs/log4j-1.2.15.jar"/>
 	<classpathentry kind="lib" path="/mybatis3.3-libs/mysql-connector-java-5.1.30-bin.jar"/>
 	<classpathentry kind="lib" path="/mybatis3.3-libs/ojdbc6-11.2.0.1.0.jar"/>
-	<classpathentry kind="lib" path="/mybatis3.3-libs/mybatis-3.2.8.jar"/>
+	<classpathentry kind="lib" path="/mybatis3.3-libs/mybatis-3.3.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
