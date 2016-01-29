@@ -10,15 +10,15 @@
 	<classpathentry kind="lib" path="/mybatis3.3-libs/commons-dbcp-1.4.jar"/>
 	<classpathentry kind="lib" path="/mybatis3.3-libs/commons-pool-1.3.jar"/>
 	<classpathentry kind="lib" path="/mybatis3.3-libs/aopalliance-1.0.0.jar"/>
-	<classpathentry kind="lib" path="/mybatis3.3-libs/spring-aop-4.1.1.RELEASE.jar"/>
-	<classpathentry kind="lib" path="/mybatis3.3-libs/spring-beans-4.1.1.RELEASE.jar"/>
-	<classpathentry kind="lib" path="/mybatis3.3-libs/spring-context-4.1.1.RELEASE.jar"/>
-	<classpathentry kind="lib" path="/mybatis3.3-libs/spring-core-4.1.1.RELEASE.jar"/>
-	<classpathentry kind="lib" path="/mybatis3.3-libs/spring-expression-4.1.1.RELEASE.jar"/>
-	<classpathentry kind="lib" path="/mybatis3.3-libs/spring-jdbc-4.1.1.RELEASE.jar"/>
-	<classpathentry kind="lib" path="/mybatis3.3-libs/spring-tx-4.1.1.RELEASE.jar"/>
 	<classpathentry kind="lib" path="/mybatis3.3-libs/aspectjweaver.jar"/>
 	<classpathentry kind="lib" path="/mybatis3.3-libs/mybatis-3.3.0.jar"/>
 	<classpathentry kind="lib" path="/mybatis3.3-libs/mybatis-spring-1.2.3.jar"/>
+	<classpathentry kind="lib" path="/mybatis3.3-libs/spring-aop-4.2.4.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/mybatis3.3-libs/spring-beans-4.2.4.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/mybatis3.3-libs/spring-context-4.2.4.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/mybatis3.3-libs/spring-core-4.2.4.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/mybatis3.3-libs/spring-expression-4.2.4.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/mybatis3.3-libs/spring-jdbc-4.2.4.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/mybatis3.3-libs/spring-tx-4.2.4.RELEASE.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
