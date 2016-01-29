@@ -3,7 +3,7 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" output="testbin" path="test"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="/mybatis3.2-libs/mybatis-3.2.8.jar" sourcepath="/mybatis328/src"/>
-	<classpathentry kind="lib" path="/mybatis3.2-libs/mysql-connector-java-5.1.30-bin.jar"/>
+	<classpathentry kind="lib" path="/mybatis3.3-libs/mybatis-3.2.8.jar" sourcepath="/mybatis328/src"/>
+	<classpathentry kind="lib" path="/mybatis3.3-libs/mysql-connector-java-5.1.30-bin.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
