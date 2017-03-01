@@ -7,6 +7,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
-	<classpathentry kind="lib" path="/mybatis3.3-libs/javax.servlet-api-3.1.0.jar"/>
+	<classpathentry kind="lib" path="/mybatis3.4-libs/javax.servlet-api-3.1.0.jar"/>
 	<classpathentry kind="output" path="WebContent/WEB-INF/classes"/>
 </classpath>
