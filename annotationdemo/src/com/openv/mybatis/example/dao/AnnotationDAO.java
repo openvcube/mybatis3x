@@ -1,6 +1,8 @@
 package com.openv.mybatis.example.dao;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -29,13 +31,14 @@ public class AnnotationDAO {
 	/**
 	 * 新增国家。
 	 */
-	public void insertCountry() {
+	public void insertCountry(int countryId) {
 		SqlSessionFactory sqlSessionFactory = MyBatisConnectionFactory
 				.getSqlSessionFactory();
 		SqlSession session = sqlSessionFactory.openSession();
 		AnnotationMapper aMapper = session.getMapper(AnnotationMapper.class);
 		try {
 			CountryVO country = new CountryVO();
+			country.setCountryId(countryId);
 			country.setCountryName("dd");
 			aMapper.insertCountry(country);
 			session.commit();
@@ -49,7 +52,7 @@ public class AnnotationDAO {
 	/**
 	 * 更新国家
 	 */
-	public void updateCountry() {
+	public void updateCountry(int countryId) {
 		SqlSessionFactory sqlSessionFactory = MyBatisConnectionFactory
 				.getSqlSessionFactory();
 		SqlSession session = sqlSessionFactory.openSession();
@@ -57,7 +60,7 @@ public class AnnotationDAO {
 		try {
 			CountryVO country = new CountryVO();
 			country.setCountryName("ee");
-			country.setCountryId(126);
+			country.setCountryId(countryId);
 			aMapper.updateCountry(country);
 			session.commit();
 		} catch (Exception e) {
@@ -70,13 +73,13 @@ public class AnnotationDAO {
 	/**
 	 * 更新国家
 	 */
-	public void delCountry() {
+	public void delCountry(int countryId) {
 		SqlSessionFactory sqlSessionFactory = MyBatisConnectionFactory
 				.getSqlSessionFactory();
 		SqlSession session = sqlSessionFactory.openSession();
 		AnnotationMapper aMapper = session.getMapper(AnnotationMapper.class);
 		try {
-			aMapper.deleteCountry(126);
+			aMapper.deleteCountry(countryId);
 			session.commit();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -148,13 +151,14 @@ public class AnnotationDAO {
 	/**
 	 * 新增国家
 	 */
-	public void insertCountryWithProvider() {
+	public void insertCountryWithProvider(int countryId) {
 		SqlSessionFactory sqlSessionFactory = MyBatisConnectionFactory
 				.getSqlSessionFactory();
 		SqlSession session = sqlSessionFactory.openSession();
 		AnnotationMapper aMapper = session.getMapper(AnnotationMapper.class);
 		try {
 			CountryVO country = new CountryVO();
+			country.setCountryId(countryId);
 			country.setCountryName("dd");
 			aMapper.insertCountryWithProvider(country);
 			session.commit();
@@ -168,7 +172,7 @@ public class AnnotationDAO {
 	/**
 	 * 更新国家。
 	 */
-	public void updateCountryWithProvider() {
+	public void updateCountryWithProvider(int countryId2) {
 		SqlSessionFactory sqlSessionFactory = MyBatisConnectionFactory
 				.getSqlSessionFactory();
 		SqlSession session = sqlSessionFactory.openSession();
@@ -176,7 +180,7 @@ public class AnnotationDAO {
 		try {
 			CountryVO country = new CountryVO();
 			country.setCountryName("ee");
-			country.setCountryId(127);
+			country.setCountryId(countryId2);
 			aMapper.updateCountryWithProvider(country);
 			session.commit();
 		} catch (Exception e) {
@@ -189,13 +193,15 @@ public class AnnotationDAO {
 	/**
 	 * 更新国家。
 	 */
-	public void delCountryWithProvider() {
+	public void delCountryWithProvider(int country) {
 		SqlSessionFactory sqlSessionFactory = MyBatisConnectionFactory
 				.getSqlSessionFactory();
 		SqlSession session = sqlSessionFactory.openSession();
 		AnnotationMapper aMapper = session.getMapper(AnnotationMapper.class);
+		Map<String,Object> params = new HashMap<String,Object>();
+		params.put("countryId", country);
 		try {
-			aMapper.deleteCountryWithProvider(127);
+			aMapper.deleteCountryWithProvider(params);//127
 			session.commit();
 		} catch (Exception e) {
 			e.printStackTrace();

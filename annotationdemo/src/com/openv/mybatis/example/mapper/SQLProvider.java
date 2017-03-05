@@ -1,5 +1,8 @@
 package com.openv.mybatis.example.mapper;
 
+import java.util.Map;
+
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.jdbc.SQL;
 
 import com.openv.mybatis.example.vo.CountryVO;
@@ -21,7 +24,7 @@ public class SQLProvider {
 		return new SQL() {
 			{
 				INSERT_INTO("country");
-
+				VALUES("country_id", "#{countryId}");
 				if (country.getCountryName() != null) {
 					VALUES("country", "#{countryName}");
 				}
@@ -48,6 +51,16 @@ public class SQLProvider {
 	}
 
 	public String deleteCountry(int countryId) {
+		return new SQL() {
+			{
+				DELETE_FROM("country");
+				WHERE("country_id = #{countryId}");
+			}
+		}.toString();
+
+	}
+	
+	public String deleteCountry2(Map<String,Object> params) {
 		return new SQL() {
 			{
 				DELETE_FROM("country");

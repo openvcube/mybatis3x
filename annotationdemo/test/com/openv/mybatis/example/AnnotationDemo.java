@@ -19,16 +19,19 @@ public class AnnotationDemo {
 
 	public static void main(String[] args) {
 		AnnotationDAO dao = new AnnotationDAO();
-		dao.insertCountry();
-		dao.updateCountry();
-		dao.delCountry();
-//		dao.selectCountry();
-//		dao.selectCustomer();
-//		dao.slectSotre();
-		dao.insertCountryWithProvider();
-//		dao.updateCountryWithProvider();
-		dao.delCountryWithProvider();
-//		dao.selectCountryWithProvider();
+		int countryId = 1024;
+		int countryId2 = 2048;
+		
+		dao.insertCountry(countryId);
+		dao.updateCountry(countryId);
+		dao.delCountry(countryId);
+		dao.selectCountry();
+		dao.selectCustomer();
+		dao.slectSotre();
+		dao.insertCountryWithProvider(countryId2);
+		dao.updateCountryWithProvider(countryId2);
+		dao.delCountryWithProvider(countryId2);
+		dao.selectCountryWithProvider();
 	}
 
 }

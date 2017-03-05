@@ -1,6 +1,7 @@
 package com.openv.mybatis.example.mapper;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.DeleteProvider;
@@ -9,7 +10,6 @@ import org.apache.ibatis.annotations.InsertProvider;
 import org.apache.ibatis.annotations.Many;
 import org.apache.ibatis.annotations.One;
 import org.apache.ibatis.annotations.Options;
-import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Result;
 import org.apache.ibatis.annotations.Results;
 import org.apache.ibatis.annotations.Select;
@@ -36,7 +36,7 @@ import com.openv.mybatis.example.vo.StoreVO;
  */
 public interface AnnotationMapper {
     //插入国家信息
-	@Insert("INSERT INTO country(country) VALUES(#{countryName})")
+	@Insert("INSERT INTO country(country_id,country) VALUES(#{countryId},#{countryName})")
 	@Options(useGeneratedKeys=true, keyProperty="countryId")
 	int insertCountry(CountryVO country);
 	
@@ -118,8 +118,8 @@ public interface AnnotationMapper {
 	@UpdateProvider(type=SQLProvider.class, method="updateCountry")
 	int updateCountryWithProvider(CountryVO country);
 	
-	@DeleteProvider(type=SQLProvider.class, method="deleteCountry")
-	int deleteCountryWithProvider(int countryId);
+	@DeleteProvider(type=SQLProvider.class, method="deleteCountry2")
+	int deleteCountryWithProvider(Map<String,Object> params);
 	
 	@SelectProvider(type=SQLProvider.class, method="findCountryByName")
 	CountryVO selectCountryWithProvider(String countryName);
