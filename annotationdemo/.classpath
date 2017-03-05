@@ -2,7 +2,6 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="test"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="/mybatis3.4-libs/mysql-connector-java-5.1.38-bin.jar"/>
 	<classpathentry kind="lib" path="/mybatis3.4-libs/mybatis-velocity-1.1.jar"/>
 	<classpathentry kind="lib" path="/mybatis3.4-libs/velocity-1.7.jar"/>
@@ -10,6 +9,7 @@
 	<classpathentry kind="lib" path="/mybatis3.4-libs/commons-lang-2.6.jar"/>
 	<classpathentry kind="lib" path="/mybatis3.4-libs/commons-logging-1.1.1.jar"/>
 	<classpathentry kind="lib" path="/mybatis3.4-libs/log4j-1.2.15.jar"/>
-	<classpathentry kind="lib" path="/mybatis3.4-libs/mybatis-3.4.0.jar"/>
+	<classpathentry kind="lib" path="/mybatis3.4-libs/mybatis-3.4.2.jar" sourcepath="/mybatis3.4.2"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

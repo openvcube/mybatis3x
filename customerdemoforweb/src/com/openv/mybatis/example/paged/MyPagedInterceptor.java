@@ -29,7 +29,7 @@ import org.apache.ibatis.session.RowBounds;
 	@Signature(
 			type = StatementHandler.class, 
 			method = "prepare", 
-			args = { Connection.class }
+			args = { Connection.class,Integer.class }
 			) 
 	})
 public class MyPagedInterceptor implements Interceptor {

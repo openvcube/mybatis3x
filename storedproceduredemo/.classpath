@@ -4,6 +4,6 @@
 	<classpathentry kind="src" output="testbin" path="test"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="/mybatis3.4-libs/mysql-connector-java-5.1.38-bin.jar"/>
-	<classpathentry kind="lib" path="/mybatis3.4-libs/mybatis-3.4.0.jar"/>
+	<classpathentry kind="lib" path="/mybatis3.4-libs/mybatis-3.4.2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

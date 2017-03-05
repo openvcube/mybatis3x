@@ -22,13 +22,13 @@ public class AnnotationDemo {
 		dao.insertCountry();
 		dao.updateCountry();
 		dao.delCountry();
-		dao.selectCountry();
-		dao.selectCustomer();
-		dao.slectSotre();
+//		dao.selectCountry();
+//		dao.selectCustomer();
+//		dao.slectSotre();
 		dao.insertCountryWithProvider();
-		dao.updateCountryWithProvider();
+//		dao.updateCountryWithProvider();
 		dao.delCountryWithProvider();
-		dao.selectCountryWithProvider();
+//		dao.selectCountryWithProvider();
 	}
 
 }
